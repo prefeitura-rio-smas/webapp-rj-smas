@@ -169,10 +169,7 @@ body {
 }
 
 /* Card backgrounds */
-.light .bg-\[\#0a2756\] {
-  background-color: #ffffff !important;
-  border: 1px solid #c1cee3;
-}
+
 
 .light .bg-\[\#1a3b6d\] {
   background-color: #ffffff !important;
@@ -282,7 +279,7 @@ body {
 /* Welcome banner */
 .light .bg-\[\#193257\].p-8.mb-8,
 .light .bg-\[\#1a3b6d\].p-8.mb-8 {
-  background-color: #ffffff !important;
+  background-color: #193257 !important;
   border: 1px solid #c1cee3;
 }
 
@@ -369,11 +366,6 @@ body {
   border: 1px solid #c1cee3;
 }
 
-/* Fix dropdown selection contrast in light theme */
-.light .bg-\[\#f0f4fa\] {
-  background-color: #f0f4fa !important;
-  color: #0d2953 !important;
-}
 
 .light .hover\:bg-\[\#f0f4fa\]:hover {
   background-color: #e0e7f2 !important;
@@ -398,49 +390,10 @@ body {
   background-color: #1a3b6d;
 }
 
-/* Fix button outlines in dark theme */
-.dark .bg-\[\#0a2756\].p-6,
-.dark .bg-\[\#0a2756\].p-4,
-.dark .bg-\[\#0a2756\].p-3 {
-  background-color: #0a2756;
-  border: 1px solid #1a3b6d;
-}
-
 /* Icon colors in dark theme */
 .light .text-\[\#00c2f7\],
 .light .text-sky-400 {
   color: #0d2953 !important;
-}
-
-/* Hover states for text - make more blue */
-.light .hover\:text-\[\#00c2f7\]:hover,
-.light .group-hover\:text-\[\#00c2f7\],
-.light .dark\:group-hover\:text-sky-300 {
-  color: #193257 !important;
-}
-
-/* Adicione estas regras para corrigir as bordas no tema escuro */
-
-.dark .border-\[\#e5e7eb\] {
-  border-color: #1a3b6d !important;
-}
-
-.dark .border {
-  border-color: #1a3b6d !important;
-}
-
-/* Garantir que todos os elementos com borda no tema escuro usem a cor correta */
-.dark * {
-  border-color: #1a3b6d !important;
-}
-
-/* Corrigir especificamente os cards e botões */
-.dark .bg-white.dark\:bg-\[\#1a3b6d\] {
-  border-color: #1a3b6d !important;
-}
-
-.dark .bg-white.dark\:bg-\[\#0a2756\] {
-  border-color: #1a3b6d !important;
 }
 
 /* Corrigir bordas dos ícones e containers */
@@ -506,13 +459,6 @@ body {
   .flex.flex-col.md\:flex-row {
     flex-direction: column !important;
   }
-}
-
-/* Ensure sidebar toggle icon is visible in both themes */
-.light header button[aria-label="Toggle sidebar"] {
-  color: #0d2953 !important;
-  border: 1px solid #c1cee3 !important;
-  background-color: #f0f4fa !important;
 }
 
 .light header button[aria-label="Toggle sidebar"]:hover {
@@ -644,27 +590,12 @@ header .inline-flex.items-center.justify-center svg {
 .dark .absolute.inset-0 .w-full {
   background-color: #1a3b6d !important;
   color: white !important;
-  border: 1px solid #38bdf8 !important;
+  border: 1px solid #0a2756 !important;
 }
 
 .dark .absolute.inset-0 button:hover,
 .dark .absolute.inset-0 .w-full:hover {
   background-color: #0a2756 !important;
-  border-color: #38bdf8 !important;
-}
-
-/* Keep buttons white in light theme */
-.light .absolute.inset-0 button,
-.light .absolute.inset-0 .w-full {
-  background-color: white !important;
-  color: #0d2953 !important;
-  border: 1px solid #c1cee3 !important;
-}
-
-.light .absolute.inset-0 button:hover,
-.light .absolute.inset-0 .w-full:hover {
-  background-color: #f0f4fa !important;
-  border-color: #00c2f7 !important;
 }
 
 /* Remove these rules that force dropdowns to be white in dark theme */

@@ -14,6 +14,8 @@ interface HeaderProps {
 export function Header({ sidebarVisible, setSidebarVisible, setCurrentPage }: HeaderProps) {
   const { theme, setTheme } = useTheme()
 
+  const logoSrc = theme === "dark" ? "/logo-prefeitura-escuro.png" : "/logo-prefeitura.png";
+
   return (
     <header className="bg-white dark:bg-[#0a2756] border-b border-[#e5e7eb] dark:border-[#1a3b6d] p-4 flex justify-between items-center">
       <div className="flex items-center gap-4">
@@ -25,7 +27,7 @@ export function Header({ sidebarVisible, setSidebarVisible, setCurrentPage }: He
           {sidebarVisible ? <X className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
         </button>
         <div className="flex items-center cursor-pointer" onClick={() => setCurrentPage(null)}>
-          <img src="/logo-prefeitura.png" alt="Prefeitura Rio Logo" className="h-10 w-auto" />
+          <img src={logoSrc} alt="Prefeitura Rio Logo" className="h-10 w-auto" />
         </div>
       </div>
 
@@ -43,9 +45,7 @@ export function Header({ sidebarVisible, setSidebarVisible, setCurrentPage }: He
           />
           <Moon className="h-[1.2rem] w-[1.2rem] text-[#193257] dark:text-white" />
         </div>
-        <Button variant="ghost" size="icon" className="text-[#193257] dark:text-white">
-          <Settings className="h-5 w-5" />
-        </Button>
+
       </div>
     </header>
   )
