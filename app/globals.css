@@ -7,6 +7,9 @@ body {
 }
 
 @layer utilities {
+  .bg-slate-100-var {
+    background-color: rgb(var(--slate-100));
+  }
   .text-balance {
     text-wrap: balance;
   }

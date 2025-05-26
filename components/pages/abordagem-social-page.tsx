@@ -141,9 +141,9 @@ export function AbordagemSocialPage({ onBack }: PageProps) {
       </div>
 
 
-
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div
-          className="bg-white dark:bg-[#1a3b6d] rounded-md p-8 flex flex-col  items-center text-center h-64 cursor-pointer transition-transform hover:scale-105 border border-[#e5e7eb] dark:border-[#1a3b6d] shadow-sm"
+          className="bg-white dark:bg-[#1a3b6d] rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105 border border-[#e5e7eb] dark:border-[#1a3b6d] shadow-sm"
           onClick={() => openExternalLink(urls.documentacao)}
         >
           <div className="bg-white dark:bg-[#0a2756] p-6 rounded-md mb-6 flex items-center justify-center border border-[#e5e7eb] dark:border-[#1a3b6d]">
@@ -162,6 +162,7 @@ export function AbordagemSocialPage({ onBack }: PageProps) {
           <h3 className="text-[#193257] dark:text-white font-medium text-xl">Download da Base de Dados</h3>
         </div>
       </div>
+    </div>
     </div>
   )
 }
