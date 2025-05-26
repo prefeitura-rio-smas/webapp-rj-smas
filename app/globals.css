@@ -598,13 +598,7 @@ header .inline-flex.items-center.justify-center svg {
   background-color: #0a2756 !important;
 }
 
-/* Remove these rules that force dropdowns to be white in dark theme */
-.dark .relative.inline-block button,
-.dark .w-full.flex.items-center.justify-between {
-  background-color: white !important;
-  color: #0d2953 !important;
-  border: 1px solid #c1cee3 !important;
-}
+
 
 /* Add these rules to ensure dropdowns are blue in dark theme */
 .dark .relative.inline-block button,

@@ -28,27 +28,27 @@ export function GestaoVagasPage({ onBack }: PageProps) {
 
     if (selectedYear === "2024") {
       return {
-        dadosGerais: `https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social/2024${ageGroupPath}`,
-        painelGeral: `https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social/2024${ageGroupPath}`,
-        painelVagas: `https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social/2024${ageGroupPath}`,
-        painelUsuarios: `https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social/2024${ageGroupPath}`,
-        painelConfirmacao: `https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social/2024${ageGroupPath}`,
-        monitoramento: `https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social/2024${ageGroupPath}`,
-        downloadBase: `https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social/2024${ageGroupPath}`,
-        instrucoes: `https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social/2024${ageGroupPath}`,
-        instalacao: `https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social/2024${ageGroupPath}`,
+        dadosGerais: ``,
+        painelGeral: ``,
+        painelVagas: ``,
+        painelUsuarios: ``,
+        painelConfirmacao: ``,
+        monitoramento: ``,
+        downloadBase: ``,
+        instrucoes: ``,
+        instalacao: `https://drive.google.com/file/d/1NL0X0tb-mD3umiRV9HM3kGzhGZtcvcr4/view`,
       }
     } else {
       return {
-        dadosGerais: `https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social${ageGroupPath}`,
-        painelGeral: `https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social${ageGroupPath}`,
-        painelVagas: `https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social${ageGroupPath}`,
-        painelUsuarios: `https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social${ageGroupPath}`,
-        painelConfirmacao: `https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social${ageGroupPath}`,
-        monitoramento: `https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social${ageGroupPath}`,
-        downloadBase: `https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social/gestao-do-cadastro-unico-1${ageGroupPath}`,
-        instrucoes: `https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social${ageGroupPath}`,
-        instalacao: `https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social${ageGroupPath}`,
+        dadosGerais: `https://siurb.rio/portal/apps/dashboards/74c18901ba6642f9ab90324ba5a0da3c`,
+        painelGeral: `https://siurb.rio/portal/apps/dashboards/1c2cfa2d92d54abf8d0c3878ee053930`,
+        painelVagas: `https://siurb.rio/portal/apps/dashboards/6a156eb991f04e559d0a214c27a39e87`,
+        painelUsuarios: `https://siurb.rio/portal/apps/dashboards/be8b0ae7fda64b59a76add7e1ba3f984#view=mobile`,
+        painelConfirmacao: `https://siurb.rio/portal/apps/dashboards/dbb3a0990b3c4b2e91d17c97855c36d8`,
+        monitoramento: `https://siurb.rio/portal/apps/dashboards/dac8bb78571e400cbefd21e87219d03e`,
+        downloadBase: `https://siurb.rio/portal/apps/webappviewer/index.html?id=feb32b24734e498e83c6d80a29e5fb13`,
+        instrucoes: ``,
+        instalacao: `https://drive.google.com/file/d/1NL0X0tb-mD3umiRV9HM3kGzhGZtcvcr4/view`,
       }
     }
   }

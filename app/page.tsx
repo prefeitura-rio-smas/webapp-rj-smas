@@ -99,7 +99,7 @@ export default function Dashboard() {
           icon: "report",
           action: () =>
             window.open(
-              "https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social/vigilancia-socioassistencial",
+              "https://drive.google.com/file/d/1jpae1Az5tLwIdVXZoTR_o3ydF1PVYggr/view",
               "_blank",
             ),
           internal: false,
@@ -110,7 +110,7 @@ export default function Dashboard() {
           icon: "report",
           action: () =>
             window.open(
-              "https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social/vigilancia-socioassistencial",
+              "https://drive.google.com/file/d/1ED0DnH9g_Kc7r0tUREbYHHeXUmlSMEVC/view",
               "_blank",
             ),
           internal: false,
@@ -142,7 +142,7 @@ export default function Dashboard() {
           icon: "chart",
           action: () =>
             window.open(
-              "https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social/servicos-e-programas-1",
+              "https://censorua-pcrj.hub.arcgis.com",
               "_blank",
             ),
           internal: false,
@@ -158,14 +158,14 @@ export default function Dashboard() {
           id: 1,
           title: "Painéis de Monitoramento",
           icon: "dashboard",
-          action: () => window.open("https://www.gov.br/cidadania/pt-br/acoes-e-programas/cadastro-unico", "_blank"),
+          action: () => window.open("https://siurb.rio/portal/apps/experiencebuilder/experience/?id=46630a95c6cf44e2b228311efabc1aad&page=Monitoramento-2025&views=PROFISSIONAIS-%28RH%29", "_blank"),
           internal: false,
         },
         {
           id: 2,
           title: "Edição de dados CTR",
           icon: "edit",
-          action: () => window.open("https://www.gov.br/cidadania/pt-br/acoes-e-programas/cadastro-unico", "_blank"),
+          action: () => window.open("https://siurb.rio/portal/apps/dashboards/c710bb4dd3a54508ba338284d4b81816", "_blank"),
           internal: false,
         },
         {
@@ -181,7 +181,7 @@ export default function Dashboard() {
           icon: "download",
           action: () =>
             window.open(
-              "https://www.gov.br/cidadania/pt-br/acoes-e-programas/cadastro-unico/gestao-do-cadastro-unico-1",
+              "https://siurb.rio/portal/apps/webappviewer/index.html?id=7055563587a2431ab4d23d342274d189",
               "_blank",
             ),
           internal: false,

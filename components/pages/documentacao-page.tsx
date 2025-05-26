@@ -32,7 +32,7 @@ export function DocumentacaoPage({ onBack }: PageProps) {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div
           className="bg-[#1a3b6d] rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105"
-          onClick={() => openExternalLink("https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social")}
+          onClick={() => openExternalLink("https://drive.google.com/drive/folders/1Ei-4Og3RWg1RIfxV_NF7kLo2h4nhdgi-")}
         >
           <div className="bg-[#0a2756] p-6 rounded-md mb-6 flex items-center justify-center">
             <BookOpen className="h-24 w-24 text-sky-400" />
@@ -42,7 +42,7 @@ export function DocumentacaoPage({ onBack }: PageProps) {
 
         <div
           className="bg-[#1a3b6d] rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105"
-          onClick={() => openExternalLink("https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social")}
+          onClick={() => openExternalLink("https://drive.google.com/drive/folders/18RX_AKcesMUrtVVHgxKEAOtClH8RQLl9")}
         >
           <div className="bg-[#0a2756] p-6 rounded-md mb-6 flex items-center justify-center">
             <GitBranch className="h-24 w-24 text-sky-400" />
@@ -52,7 +52,7 @@ export function DocumentacaoPage({ onBack }: PageProps) {
 
         <div
           className="bg-[#1a3b6d] rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105"
-          onClick={() => openExternalLink("https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social")}
+          onClick={() => openExternalLink("https://drive.google.com/drive/folders/15Q5l52k1YfC7Xl2OSueVTqP_JHMJUncM")}
         >
           <div className="bg-[#0a2756] p-6 rounded-md mb-6 flex items-center justify-center">
             <User className="h-24 w-24 text-sky-400" />
@@ -62,7 +62,7 @@ export function DocumentacaoPage({ onBack }: PageProps) {
 
         <div
           className="bg-[#1a3b6d] rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105"
-          onClick={() => openExternalLink("https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social")}
+          onClick={() => openExternalLink("https://drive.google.com/drive/folders/17nrBf-QpugvHgUjXitE0vqY2Bo-6N9IB")}
         >
           <div className="bg-[#0a2756] p-6 rounded-md mb-6 flex items-center justify-center">
             <CloudLightning className="h-24 w-24 text-sky-400" />

@@ -38,7 +38,7 @@ export function CartaoProtegePage({ onBack }: PageProps) {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div
           className="bg-[#1a3b6d] rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105"
-          onClick={() => openExternalLink("https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social")}
+          onClick={() => openExternalLink("https://survey123.arcgis.com/share/63405d2901e146fc9a59a4936686b6be?portalUrl=https://siurb.rio/portal")}
         >
           <div className="bg-[#0a2756] p-6 rounded-md mb-6 flex items-center justify-center">
             <ClipboardCheck className="h-24 w-24 text-sky-400" />
@@ -48,7 +48,7 @@ export function CartaoProtegePage({ onBack }: PageProps) {
 
         <div
           className="bg-[#1a3b6d] rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105"
-          onClick={() => openExternalLink("https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social")}
+          onClick={() => openExternalLink("https://siurb.rio/portal/apps/experiencebuilder/experience/?id=d10c7f1251e143b58a4c5de1d1813369&page=Dados-Gerais---Protege-SUAS")}
         >
           <div className="bg-[#0a2756] p-6 rounded-md mb-6 flex items-center justify-center">
             <Monitor className="h-24 w-24 text-sky-400" />
@@ -58,7 +58,7 @@ export function CartaoProtegePage({ onBack }: PageProps) {
 
         <div
           className="bg-[#1a3b6d] rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105"
-          onClick={() => openExternalLink("https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social")}
+          onClick={() => openExternalLink("https://siurb.rio/portal/apps/experiencebuilder/experience/?id=d10c7f1251e143b58a4c5de1d1813369&page=Edição---Protege-SUAS")}
         >
           <div className="bg-[#0a2756] p-6 rounded-md mb-6 flex items-center justify-center">
             <Edit className="h-24 w-24 text-sky-400" />
@@ -68,7 +68,7 @@ export function CartaoProtegePage({ onBack }: PageProps) {
 
         <div
           className="bg-[#1a3b6d] rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105"
-          onClick={() => openExternalLink("https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social")}
+          onClick={() => openExternalLink("https://siurb.rio/portal/apps/experiencebuilder/experience/?id=d10c7f1251e143b58a4c5de1d1813369&page=Download---Protege-SUAS")}
         >
           <div className="bg-[#0a2756] p-6 rounded-md mb-6 flex items-center justify-center">
             <CloudDownload className="h-24 w-24 text-sky-400" />
@@ -86,7 +86,7 @@ export function CartaoProtegePage({ onBack }: PageProps) {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div
           className="bg-[#1a3b6d] rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105"
-          onClick={() => openExternalLink("https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social")}
+          onClick={() => openExternalLink("https://doweb.rio.rj.gov.br/apifront/portal/edicoes/imprimir_materia/829045/5333")}
         >
           <div className="bg-[#0a2756] p-6 rounded-md mb-6 flex items-center justify-center">
             <Gavel className="h-24 w-24 text-sky-400" />
@@ -97,7 +97,7 @@ export function CartaoProtegePage({ onBack }: PageProps) {
 
         <div
           className="bg-[#1a3b6d] rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105"
-          onClick={() => openExternalLink("https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social")}
+          onClick={() => openExternalLink("https://doweb.rio.rj.gov.br/portal/visualizacoes/pdf/5462#/p:38/e:5462?find=RESOLUÇÃO%20SMAS")}
         >
           <div className="bg-[#0a2756] p-6 rounded-md mb-6 flex items-center justify-center">
             <Scale className="h-24 w-24 text-sky-400" />
@@ -108,7 +108,7 @@ export function CartaoProtegePage({ onBack }: PageProps) {
 
         <div
           className="bg-[#1a3b6d] rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105"
-          onClick={() => openExternalLink("https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social")}
+          onClick={() => openExternalLink("https://docs.google.com/document/d/1zxdd58AESnsakk46Ji7KSEEBLrdQ8mxG/edit?tab=t.0")}
         >
           <div className="bg-[#0a2756] p-6 rounded-md mb-6 flex items-center justify-center">
             <GitBranch className="h-24 w-24 text-sky-400" />
