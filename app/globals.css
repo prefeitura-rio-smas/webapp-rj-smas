@@ -96,6 +96,40 @@ body {
   }
 }
 
+/* Reset básico e fontes */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
+
+/* Variáveis de cor centralizadas */
+:root {
+  --color-primary: #193257;         /* Exemplo: azul principal */
+  --color-secondary: #00c2f7;       /* Exemplo: azul claro */
+  --color-background: #f6f9fc;      /* Fundo claro */
+  --color-surface: #ffffff;         /* Card claro */
+  --color-surface-alt: #e9eff7;     /* Card alternativo */
+  --color-foreground: #193257;      /* Texto principal */
+  --color-muted: #bfcbe2;           /* Texto secundário/borda */
+  --color-border: #e5e7eb;          /* Borda card */
+  --color-hover: #e3f3fc;           /* Hover card */
+}
+
+.dark {
+  --color-primary: #ffffff;
+  --color-secondary: #00c2f7;
+  --color-background: #10244a;      /* Fundo escuro */
+  --color-surface: #193257;         /* Card escuro */
+  --color-surface-alt: #22396b;     /* Card alternativo escuro */
+  --color-foreground: #ffffff;      /* Texto principal escuro */
+  --color-muted: #bfcbe2;
+  --color-border: #22396b;
+  --color-hover: #22396b;
+}
+
 /* Ensure main content expands properly when sidebar is hidden */
 .main-content-expanded {
   width: 100% !important;
@@ -526,6 +560,7 @@ header button[aria-label="Toggle sidebar"] svg {
 }
 
 /* Force all buttons in hover overlays to be white */
+/*
 .absolute.inset-0 button,
 .absolute.inset-0 .w-full {
   background-color: white !important;
@@ -533,95 +568,20 @@ header button[aria-label="Toggle sidebar"] svg {
   border: 1px solid #c1cee3 !important;
 }
 
-.absolute.inset-0 button:hover,
-.absolute.inset-0 .w-full:hover {
-  background-color: #f0f4fa !important;
-  border-color: #00c2f7 !important;
-}
-
-/* Force sidebar toggle button to be always visible */
-header button[aria-label="Toggle sidebar"],
-header .inline-flex.items-center.justify-center {
-  background-color: white !important;
-  color: #0d2953 !important;
-  border: none !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-.dark header button[aria-label="Toggle sidebar"],
-.dark header .inline-flex.items-center.justify-center {
-  background-color: #0a2756 !important;
-  color: white !important;
-  border: none !important;
-}
-
-header button[aria-label="Toggle sidebar"]:hover,
-header .inline-flex.items-center.justify-center:hover {
-  background-color: #e0e7f2 !important;
-}
-
-.dark header button[aria-label="Toggle sidebar"]:hover,
-.dark header .inline-flex.items-center.justify-center:hover {
-  background-color: #1a3b6d !important;
-}
-
-/* Ensure icon inside button is visible */
-header button[aria-label="Toggle sidebar"] svg,
-header .inline-flex.items-center.justify-center svg {
-  color: inherit !important;
-  opacity: 1 !important;
-}
-
-/* Force dropdown selectors to be white */
-.relative.inline-block button,
-.w-full.flex.items-center.justify-between {
-  background-color: white !important;
-  color: #0d2953 !important;
-  border: 1px solid #c1cee3 !important;
-}
-
-.dark .relative.inline-block button,
-.dark .w-full.flex.items-center.justify-between {
-  background-color: white !important;
-  color: #0d2953 !important;
-  border: 1px solid #c1cee3 !important;
-}
-
-/* Make buttons in hover overlays blue in dark theme */
 .dark .absolute.inset-0 button,
 .dark .absolute.inset-0 .w-full {
   background-color: #1a3b6d !important;
   color: white !important;
   border: 1px solid #0a2756 !important;
 }
+*/
 
-.dark .absolute.inset-0 button:hover,
-.dark .absolute.inset-0 .w-full:hover {
-  background-color: #0a2756 !important;
-}
-
-
-
-/* Add these rules to ensure dropdowns are blue in dark theme */
-.dark .relative.inline-block button,
-.dark .w-full.flex.items-center.justify-between {
-  background-color: #0a2756 !important;
-  color: white !important;
-  border: 1px solid #1a3b6d !important;
-}
-
-.dark .absolute.z-10.mt-1.w-full {
-  background-color: #0a2756 !important;
-  border-color: #1a3b6d !important;
-}
-
-.dark .absolute.z-10.mt-1.w-full button {
-  color: white !important;
-}
-
-.dark .absolute.z-10.mt-1.w-full button:hover {
-  background-color: #1a3b6d !important;
+/* --- MANTENHA ESTA REGRA PARA GARANTIR TRANSPARÊNCIA --- */
+.menu-float-btn,
+.menu-float-btn * {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 /* Remove unnecessary borders/outlines */
@@ -648,4 +608,11 @@ header button,
 .dark .py-1 button:hover,
 .dark .py-1 button.font-medium {
   background-color: #1a3b6d !important;
+}
+
+.menu-float-btn,
+.menu-float-btn * {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
 }

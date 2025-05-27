@@ -34,14 +34,18 @@ export function YearSelector({ currentYear, onYearChange }: YearSelectorProps) {
           e.stopPropagation()
           setIsOpen(!isOpen)
         }}
-        className="w-full flex items-center justify-between bg-white dark:bg-[#0a2756] text-[#0d2953] dark:text-white p-3 md:p-4 rounded-md border border-[#c1cee3] dark:border-[#1a3b6d] shadow-sm hover:bg-[#f8fafc] dark:hover:bg-[#1a3b6d]"
+        className="w-full flex items-center justify-between
+          bg-white dark:bg-[#193257] text-primary dark:text-white
+          p-3 md:p-4 rounded-md border border-border dark:border-[#1a3b6d]
+          shadow-sm hover:bg-slate-100 dark:hover:bg-[#22396b]
+          transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky-400"
       >
         <span className="font-medium text-sm md:text-base">Painéis de Monitoramento {currentYear}</span>
         <ChevronDown className="h-4 w-4 md:h-5 md:w-5" />
       </button>
 
       {isOpen && (
-        <div className="absolute z-10 mt-1 w-full bg-white dark:bg-[#0a2756] rounded-md shadow-lg border border-[#c1cee3] dark:border-[#1a3b6d]">
+        <div className="absolute z-10 mt-1 w-full bg-white dark:bg-[#193257] rounded-md shadow-lg border border-border dark:border-[#1a3b6d]">
           <div className="py-1">
             {years.map((year) => (
               <button
@@ -51,9 +55,14 @@ export function YearSelector({ currentYear, onYearChange }: YearSelectorProps) {
                   onYearChange(year)
                   setIsOpen(false)
                 }}
-                className={`w-full text-left px-3 md:px-4 py-2 md:py-3 text-sm md:text-base text-[#0d2953] dark:text-white hover:bg-[#f0f4fa] dark:hover:bg-[#1a3b6d] ${
-                  year === currentYear ? "font-medium bg-[#f0f4fa] dark:bg-[#1a3b6d]" : ""
-                }`}
+                className={`w-full text-left px-3 md:px-4 py-2 md:py-3 text-sm md:text-base
+                  text-primary dark:text-white
+                  hover:bg-slate-100 dark:hover:bg-[#22396b]
+                  hover:text-sky-600 dark:hover:text-sky-400
+                  rounded-md transition
+                  focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky-400
+                  ${year === currentYear ? "font-bold bg-slate-100 dark:bg-[#22396b] text-sky-600 dark:text-sky-400" : ""}
+                `}
               >
                 Painéis de Monitoramento {year}
               </button>

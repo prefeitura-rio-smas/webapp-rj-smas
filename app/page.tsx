@@ -11,7 +11,7 @@ import { AbordagemSocialPage } from "@/components/pages/abordagem-social-page"
 import { GestaoVagasPage } from "@/components/pages/gestao-vagas-page"
 import { FormulariosPage } from "@/components/pages/formularios-page"
 
-export default function Dashboard() {
+export default function HomePage() {
   const [sidebarVisible, setSidebarVisible] = useState(false)
   const [currentPage, setCurrentPage] = useState<string | null>(null)
   const [isMobile, setIsMobile] = useState(false)
@@ -46,7 +46,7 @@ export default function Dashboard() {
   // Create overlay for mobile when sidebar is open
   const Overlay = () => {
     if (isMobile && sidebarVisible) {
-      return <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setSidebarVisible(false)} />
+      return <div className="fixed inset-0 bg-opacity-50 z-40" onClick={() => setSidebarVisible(false)} />
     }
     return null
   }
@@ -208,7 +208,7 @@ export default function Dashboard() {
       default:
         return (
           <>
-            <div className="bg-white dark:bg-[#1a3b6d] rounded-md p-4 md:p-8 mb-8 text-[#193257] dark:text-white text-center border border-[#e5e7eb] shadow-sm">
+            <div className="bg-surface dark:bg-surface rounded-md p-4 md:p-8 mb-8 text-primary dark:text-foreground text-center border border-muted shadow-sm">
               <h1 className="text-xl md:text-2xl font-semibold">SEJA BEM-VINDO(A)</h1>
               <p className="text-sm md:text-base">ao Sistema Integrado da Secretaria Municipal de Assistência Social</p>
             </div>
@@ -229,13 +229,13 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f0f4fa] dark:bg-[#0a2756]">
+    <div className="min-h-screen bg-background">
       <Header sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible} setCurrentPage={setCurrentPage} />
       <Overlay />
       <div className="flex relative">
         <Menu setCurrentPage={setCurrentPage} sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible} />
         <main
-          className={`transition-all duration-300 bg-[#f0f4fa] dark:bg-[#0a2756] p-4 md:p-8 ${
+          className={`transition-all duration-300 bg-background p-4 md:p-8 ${
             sidebarVisible && !isMobile ? "flex-1 ml-0" : "w-full ml-0"
           }`}
         >
