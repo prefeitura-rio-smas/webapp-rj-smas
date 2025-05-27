@@ -181,7 +181,7 @@ export function Menu({ setCurrentPage, sidebarVisible, setSidebarVisible }: Menu
 
   return (
     <aside
-      className={`fixed md:relative z-50 bg-white dark:bg-[#0a2756] border-r border-[#e5e7eb] dark:border-[#1a3b6d] min-h-[calc(100vh-64px)] transition-all duration-300 ${
+      className={`fixed md:relative z-50 bg-surface-alt border-r border-border min-h-[calc(100vh-64px)] transition-all duration-300 ${
         sidebarVisible ? "left-0 w-full md:w-60" : "-left-full md:-left-full w-0 md:w-0"
       }`}
     >
@@ -189,7 +189,7 @@ export function Menu({ setCurrentPage, sidebarVisible, setSidebarVisible }: Menu
         <div className="mb-6">
           <button
             onClick={() => handleMenuItemClick(() => setCurrentPage(null))}
-            className="flex items-center gap-2 text-[#193257] dark:text-white p-3 rounded-md hover:bg-[#f3f4f6] dark:hover:bg-[#1a3b6d] w-full text-left text-base"
+            className="flex items-center gap-2 text-primary p-3 rounded-md hover:bg-hover w-full text-left text-base transition-colors"
           >
             <Home className="h-5 w-5" />
             <span>Início</span>
@@ -197,18 +197,18 @@ export function Menu({ setCurrentPage, sidebarVisible, setSidebarVisible }: Menu
         </div>
 
         <div className="space-y-1">
-          <h3 className="text-[#4b5563] dark:text-gray-400 text-sm font-medium px-2 mb-3">Serviços</h3>
+          <h3 className="text-muted text-sm font-medium px-2 mb-3">Serviços</h3>
 
           <Accordion type="multiple" className="w-full border-none">
             {menuItems.map((item) => (
               <AccordionItem key={item.id} value={item.id} className="border-none">
-                <AccordionTrigger className="py-3 px-3 text-[#193257] dark:text-white hover:bg-[#f3f4f6] dark:hover:bg-[#1a3b6d] hover:no-underline rounded-md text-base">
+                <AccordionTrigger className="py-3 px-3 text-primary hover:bg-hover hover:no-underline rounded-md text-base transition-colors">
                   <div className="flex items-center gap-2">
                     {item.icon}
                     <span>{item.title}</span>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="pb-0 pt-1 bg-[#f3f4f6] dark:bg-[#0f3169] accordion-content">
+                <AccordionContent className="pb-0 pt-1 bg-surface accordion-content">
                   <div className="space-y-1">
                     {item.subItems.map((subItem) => (
                       <MenuItem
