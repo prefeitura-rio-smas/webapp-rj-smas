@@ -1,42 +1,23 @@
 "use client"
 
-import { useState } from "react"
 import { ArrowLeft, ClipboardList } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { YearSelector } from "@/components/year-selector"
 
 interface PageProps {
   onBack: () => void
 }
 
 export function FormulariosPage({ onBack }: PageProps) {
-  const [selectedYear, setSelectedYear] = useState("2025")
+  const urls = {
+    profissionais: "https://survey123.arcgis.com/share/84560c13ce5d43098ed093054f62bfe1?portalUrl=https://siurb.rio/portal&version=3.21",
+    cadastroUnico: "https://survey123.arcgis.com/share/a62ca2b5133d41afb3668507b3808911?portalUrl=https://siurb.rio/portal",
+    acoes: "https://survey123.arcgis.com/share/9336d682e3ed4602a7288a14330c4065?portalUrl=https://siurb.rio/portal",
+    entrevistas: "https://survey123.arcgis.com/share/dfefac75699a4479974612b5453af890?portalUrl=https://siurb.rio/portal",
+  }
 
-  // Function to handle external links
   const openExternalLink = (url: string) => {
     window.open(url, "_blank")
   }
-
-  // Define URLs based on selected year
-  const getUrls = () => {
-    if (selectedYear === "2024") {
-      return {
-        profissionais: "https://survey123.arcgis.com/share/84560c13ce5d43098ed093054f62bfe1?portalUrl=https://siurb.rio/portal&version=3.21",
-        cadastroUnico: "https://survey123.arcgis.com/share/a62ca2b5133d41afb3668507b3808911?portalUrl=https://siurb.rio/portal",
-        acoes: "https://survey123.arcgis.com/share/9336d682e3ed4602a7288a14330c4065?portalUrl=https://siurb.rio/portal",
-        entrevistas: "https://survey123.arcgis.com/share/dfefac75699a4479974612b5453af890?portalUrl=https://siurb.rio/portal",
-      }
-    } else {
-      return {
-        profissionais: "https://survey123.arcgis.com/share/84560c13ce5d43098ed093054f62bfe1?portalUrl=https://siurb.rio/portal&version=3.21",
-        cadastroUnico: "https://survey123.arcgis.com/share/a62ca2b5133d41afb3668507b3808911?portalUrl=https://siurb.rio/portal",
-        acoes: "https://survey123.arcgis.com/share/9336d682e3ed4602a7288a14330c4065?portalUrl=https://siurb.rio/portal",
-        entrevistas: "https://survey123.arcgis.com/share/dfefac75699a4479974612b5453af890?portalUrl=https://siurb.rio/portal",
-      }
-    }
-  }
-
-  const urls = getUrls()
 
   return (
     <div className="space-y-8">
@@ -53,8 +34,6 @@ export function FormulariosPage({ onBack }: PageProps) {
         </div>
         <h1 className="text-5xl font-bold text-[#193257] dark:text-white text-right opacity-50">CADASTRO ÚNICO</h1>
       </div>
-
-
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div

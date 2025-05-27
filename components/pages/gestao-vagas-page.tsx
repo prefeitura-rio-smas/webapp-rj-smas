@@ -11,17 +11,14 @@ interface PageProps {
 }
 
 export function GestaoVagasPage({ onBack }: PageProps) {
-  // Add state for hover tracking
   const [hoveredCard, setHoveredCard] = useState<string | null>(null)
   const [selectedYear, setSelectedYear] = useState("2025")
   const [selectedAgeGroup, setSelectedAgeGroup] = useState("Adultos")
 
-  // Function to handle external links
   const openExternalLink = (url: string) => {
     window.open(url, "_blank")
   }
 
-  // Define URLs based on selected year and age group
   const getUrls = () => {
     let ageGroupPath = ""
     let dadosGerais = ""
@@ -31,7 +28,6 @@ export function GestaoVagasPage({ onBack }: PageProps) {
     let painelConfirmacao = ""
     let monitoramento = ""
 
-    // Use switch to determine the ageGroupPath and links
     switch (`${selectedYear}+${selectedAgeGroup}`) {
       case "2024+Crianças e Adolescentes":
         ageGroupPath = "/criancas-adolescentes"
