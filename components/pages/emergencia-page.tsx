@@ -15,18 +15,22 @@ export function EmergenciaPage({ onBack }: PageProps) {
 
   return (
     <div className="space-y-8">
-      <div className="bg-[#1a3b6d] rounded-md p-8">
-        <div className="flex items-center gap-3 text-white mb-6">
-          <Button variant="ghost" size="icon" onClick={onBack} className="text-white p-0 h-auto">
-            <ArrowLeft className="h-6 w-6" />
-          </Button>
-          <div className="flex items-center gap-2 text-lg">
-            <span>Página inicial</span>
-            <span>/</span>
-            <span className="font-medium">Emergência Socioassistencial</span>
-          </div>
+      <div className="bg-surface rounded-md p-8 border border-border shadow-sm">
+        <div className="flex items-center gap-3 text-primary mb-6">
+          <button
+            onClick={onBack}
+            className="flex items-center gap-2 text-primary text-lg group p-0 h-auto"
+            style={{ WebkitTapHighlightColor: "transparent" }}
+          >
+            <ArrowLeft className="h-7 w-7" />
+            <span className="group-hover:underline transition">Página inicial</span>
+          </button>
+          <span>/</span>
+          <span className="text-2xl font-bold text-primary flex items-center h-7">Emergência Socioassistencial</span>
         </div>
-        <h1 className="text-5xl font-bold text-white text-right opacity-50">PROTEÇÃO SOCIAL BÁSICA</h1>
+        <h1 className="text-5xl font-bold text-primary text-right opacity-50">
+          PROTEÇÃO SOCIAL BÁSICA
+        </h1>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
