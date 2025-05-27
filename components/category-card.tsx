@@ -132,18 +132,16 @@ export function CategoryCard({ title, description, buttons }: CategoryCardProps)
                 setIsHovered(false)
               }}
               className="flex flex-col items-center w-24 md:w-32 text-center group cursor-pointer
-    bg-white border border-[#c1cee3] rounded-lg
-    dark:bg-[#22396b]
-    transition
-    outline-none
-    hover:border-[#00c2f7] hover:bg-[#e3f3fc] hover:shadow-lg
-    focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#00c2f7]
-    dark:hover:border-[#00c2f7] dark:hover:bg-[#22396b]"
+        bg-surface border border-border rounded-lg
+        transition
+        outline-none
+        hover:bg-hover hover:border-primary hover:shadow-lg
+        focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
             >
               <div className="p-3 md:p-4 rounded-md mb-2 md:mb-3 flex items-center justify-center">
                 {getButtonIcon(button.icon)}
               </div>
-              <span className="text-[#193257] dark:text-white text-sm md:text-base group-hover:text-[#00c2f7] transition-colors">
+              <span className="text-primary text-sm md:text-base group-hover:text-primary transition-colors">
                 {button.title}
               </span>
               {!button.internal && (
