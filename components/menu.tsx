@@ -181,15 +181,15 @@ export function Menu({ setCurrentPage, sidebarVisible, setSidebarVisible }: Menu
 
   return (
     <aside
-      className={`fixed md:relative z-50 bg-surface-alt border-r border-border min-h-[calc(100vh-64px)] transition-all duration-300 ${
-        sidebarVisible ? "left-0 w-full md:w-60" : "-left-full md:-left-full w-0 md:w-0"
-      }`}
+      className={`fixed md:relative z-50 bg-surface-alt border-r border-border min-h-[calc(100vh-64px)] transition-all duration-300
+    ${sidebarVisible ? "left-0 w-64 md:w-60" : "-left-full w-0"}
+    md:left-0 md:w-60`}
     >
       <nav className="p-4">
         <div className="mb-6">
           <button
             onClick={() => handleMenuItemClick(() => setCurrentPage(null))}
-            className="flex items-center gap-2 text-primary p-3 rounded-md hover:bg-hover w-full text-left text-base transition-colors"
+            className="flex items-center gap-2 text-primary p-3 rounded-md hover:bg-hover active:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary w-full text-left text-base transition-colors"
           >
             <Home className="h-5 w-5" />
             <span>Início</span>

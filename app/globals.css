@@ -616,3 +616,7 @@ header button,
   box-shadow: none !important;
   border: none !important;
 }
+
+.dark {
+  --color-hover: #294072; /* Um tom mais claro que --color-surface-alt */
+}
