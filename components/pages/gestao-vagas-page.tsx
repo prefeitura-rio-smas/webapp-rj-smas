@@ -23,33 +23,77 @@ export function GestaoVagasPage({ onBack }: PageProps) {
 
   // Define URLs based on selected year and age group
   const getUrls = () => {
-    const baseYear = selectedYear === "2024" ? "2024" : ""
-    const ageGroupPath = selectedAgeGroup === "Crianças e Adolescentes" ? "/criancas-adolescentes" : "/adultos"
+    let ageGroupPath = ""
+    let dadosGerais = ""
+    let painelGeral = ""
+    let painelVagas = ""
+    let painelUsuarios = ""
+    let painelConfirmacao = ""
+    let monitoramento = ""
 
-    if (selectedYear === "2024") {
-      return {
-        dadosGerais: ``,
-        painelGeral: ``,
-        painelVagas: ``,
-        painelUsuarios: ``,
-        painelConfirmacao: ``,
-        monitoramento: ``,
-        downloadBase: ``,
-        instrucoes: ``,
-        instalacao: `https://drive.google.com/file/d/1NL0X0tb-mD3umiRV9HM3kGzhGZtcvcr4/view`,
-      }
-    } else {
-      return {
-        dadosGerais: `https://siurb.rio/portal/apps/dashboards/74c18901ba6642f9ab90324ba5a0da3c`,
-        painelGeral: `https://siurb.rio/portal/apps/dashboards/1c2cfa2d92d54abf8d0c3878ee053930`,
-        painelVagas: `https://siurb.rio/portal/apps/dashboards/6a156eb991f04e559d0a214c27a39e87`,
-        painelUsuarios: `https://siurb.rio/portal/apps/dashboards/be8b0ae7fda64b59a76add7e1ba3f984#view=mobile`,
-        painelConfirmacao: `https://siurb.rio/portal/apps/dashboards/dbb3a0990b3c4b2e91d17c97855c36d8`,
-        monitoramento: `https://siurb.rio/portal/apps/dashboards/dac8bb78571e400cbefd21e87219d03e`,
-        downloadBase: `https://siurb.rio/portal/apps/webappviewer/index.html?id=feb32b24734e498e83c6d80a29e5fb13`,
-        instrucoes: ``,
-        instalacao: `https://drive.google.com/file/d/1NL0X0tb-mD3umiRV9HM3kGzhGZtcvcr4/view`,
-      }
+    // Use switch to determine the ageGroupPath and links
+    switch (`${selectedYear}+${selectedAgeGroup}`) {
+      case "2024+Crianças e Adolescentes":
+        ageGroupPath = "/criancas-adolescentes"
+        dadosGerais = ""
+        painelGeral = ""
+        painelVagas = ""
+        painelUsuarios = ""
+        painelConfirmacao = ""
+        monitoramento = ""
+        break
+
+      case "2024+Adultos":
+        ageGroupPath = "/adultos"
+        dadosGerais = ""
+        painelGeral = ""
+        painelVagas = ""
+        painelUsuarios = ""
+        painelConfirmacao = ""
+        monitoramento = ""
+        break
+
+      case "2025+Crianças e Adolescentes":
+        ageGroupPath = "/criancas-adolescentes"
+        dadosGerais = ""
+        painelGeral = ""
+        painelVagas = ""
+        painelUsuarios = ""
+        painelConfirmacao = ""
+        monitoramento = ""
+        break
+
+      case "2025+Adultos":
+        ageGroupPath = "/adultos"
+        dadosGerais = "https://siurb.rio/portal/apps/dashboards/74c18901ba6642f9ab90324ba5a0da3c"
+        painelGeral = "https://siurb.rio/portal/apps/dashboards/1c2cfa2d92d54abf8d0c3878ee053930"
+        painelVagas = "https://siurb.rio/portal/apps/dashboards/6a156eb991f04e559d0a214c27a39e87"
+        painelUsuarios = "https://siurb.rio/portal/apps/dashboards/be8b0ae7fda64b59a76add7e1ba3f984#view=mobile"
+        painelConfirmacao = "https://siurb.rio/portal/apps/dashboards/dbb3a0990b3c4b2e91d17c97855c36d8"
+        monitoramento = "https://siurb.rio/portal/apps/dashboards/dac8bb78571e400cbefd21e87219d03e"
+        break
+
+      default:
+        ageGroupPath = "/default"
+        dadosGerais = ""
+        painelGeral = ""
+        painelVagas = ""
+        painelUsuarios = ""
+        painelConfirmacao = ""
+        monitoramento = ""
+        break
+    }
+
+    return {
+      dadosGerais,
+      painelGeral,
+      painelVagas,
+      painelUsuarios,
+      painelConfirmacao,
+      monitoramento,
+      downloadBase: "https://siurb.rio/portal/apps/webappviewer/index.html?id=feb32b24734e498e83c6d80a29e5fb13",
+      instrucoes: "",
+      instalacao: "https://drive.google.com/file/d/1NL0X0tb-mD3umiRV9HM3kGzhGZtcvcr4/view?usp=sharing",
     }
   }
 
