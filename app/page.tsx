@@ -208,7 +208,7 @@ export default function HomePage() {
       default:
         return (
           <>
-            <div className="bg-surface dark:bg-surface rounded-md p-4 md:p-8 mb-8 text-primary dark:text-foreground text-center border border-muted shadow-sm">
+            <div className="bg-surface rounded-md p-4 md:p-8 mb-8 text-primary text-center border border-muted shadow-sm">
               <h1 className="text-xl md:text-2xl font-semibold">SEJA BEM-VINDO(A)</h1>
               <p className="text-sm md:text-base">ao Sistema Integrado da Secretaria Municipal de Assistência Social</p>
             </div>
