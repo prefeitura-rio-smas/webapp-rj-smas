@@ -1,13 +1,9 @@
 "use client"
 
 import { ArrowLeft, ClipboardCheck, Monitor, Edit, CloudDownload, Gavel, Scale, GitBranch } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
-interface PageProps {
-  onBack: () => void
-}
-
-export function CartaoProtegePage({ onBack }: PageProps) {
+export function CartaoProtegePage() {
   const openExternalLink = (url: string) => {
     window.open(url, "_blank")
   }
@@ -67,14 +63,14 @@ export function CartaoProtegePage({ onBack }: PageProps) {
     <div className="space-y-8">
       <div className="bg-surface rounded-md p-8 border border-border shadow-sm">
         <div className="flex items-center gap-3 text-primary mb-6">
-          <button
-            onClick={onBack}
+          <Link
+            href="/homepage"
             className="flex items-center gap-2 text-primary text-lg group p-0 h-auto"
             style={{ WebkitTapHighlightColor: "transparent" }}
           >
             <ArrowLeft className="h-7 w-7" />
             <span className="group-hover:underline transition">Página inicial</span>
-          </button>
+          </Link>
           <span>/</span>
           <span className="text-2xl font-bold text-primary flex items-center h-7">{TITLES.page}</span>
         </div>
