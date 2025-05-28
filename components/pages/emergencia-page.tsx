@@ -8,7 +8,6 @@ interface PageProps {
 }
 
 export function EmergenciaPage({ onBack }: PageProps) {
-  // Function to handle external links
   const openExternalLink = (url: string) => {
     window.open(url, "_blank")
   }
@@ -35,55 +34,55 @@ export function EmergenciaPage({ onBack }: PageProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div
-          className="bg-[#1a3b6d] rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105"
+          className="bg-surface rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
           onClick={() => openExternalLink("")}
         >
-          <div className="bg-[#0a2756] p-6 rounded-md mb-6 flex items-center justify-center">
-            <Monitor className="h-24 w-24 text-sky-400" />
+          <div className="bg-surface-alt p-6 rounded-md mb-6 flex items-center justify-center border border-border">
+            <Monitor className="h-24 w-24 text-secondary" />
           </div>
-          <h3 className="text-white font-medium text-xl">Painéis de Monitoramento</h3>
+          <h3 className="text-primary font-medium text-xl">Painéis de Monitoramento</h3>
         </div>
 
         <div
-          className="bg-[#1a3b6d] rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105"
+          className="bg-surface rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
           onClick={() => openExternalLink("")}
         >
-          <div className="bg-[#0a2756] p-6 rounded-md mb-6 flex items-center justify-center">
-            <Map className="h-24 w-24 text-sky-400" />
+          <div className="bg-surface-alt p-6 rounded-md mb-6 flex items-center justify-center border border-border">
+            <Map className="h-24 w-24 text-secondary" />
           </div>
-          <h3 className="text-white font-medium text-xl">Mapa de Gestão Territorial</h3>
+          <h3 className="text-primary font-medium text-xl">Mapa de Gestão Territorial</h3>
         </div>
 
         <div
-          className="bg-[#1a3b6d] rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105"
+          className="bg-surface rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
           onClick={() => openExternalLink("")}
         >
-          <div className="bg-[#0a2756] p-6 rounded-md mb-6 flex items-center justify-center">
-            <ClipboardCheck className="h-24 w-24 text-sky-400" />
+          <div className="bg-surface-alt p-6 rounded-md mb-6 flex items-center justify-center border border-border">
+            <ClipboardCheck className="h-24 w-24 text-secondary" />
           </div>
-          <h3 className="text-white font-medium text-xl">Ficha de Atendimento Emergência Socioassistencial</h3>
+          <h3 className="text-primary font-medium text-xl">Ficha de Atendimento Emergência Socioassistencial</h3>
         </div>
 
         <div
-          className="bg-[#1a3b6d] rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105"
+          className="bg-surface rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
           onClick={() => openExternalLink("")}
         >
-          <div className="bg-[#0a2756] p-6 rounded-md mb-6 flex items-center justify-center">
-            <CloudDownload className="h-24 w-24 text-sky-400" />
+          <div className="bg-surface-alt p-6 rounded-md mb-6 flex items-center justify-center border border-border">
+            <CloudDownload className="h-24 w-24 text-secondary" />
           </div>
-          <h3 className="text-white font-medium text-xl">Consulta de Famílias e Download</h3>
+          <h3 className="text-primary font-medium text-xl">Consulta de Famílias e Download</h3>
         </div>
       </div>
 
       <div
-        className="bg-[#1a3b6d] rounded-md p-8 flex items-start gap-6 md:w-1/3 cursor-pointer transition-transform hover:scale-105"
+        className="bg-surface rounded-md p-8 flex items-start gap-6 md:w-1/3 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
         onClick={() => openExternalLink("")}
       >
-        <div className="bg-[#0a2756] p-6 rounded-md flex items-center justify-center">
-          <Edit className="h-24 w-24 text-sky-400" />
+        <div className="bg-surface-alt p-6 rounded-md flex items-center justify-center border border-border">
+          <Edit className="h-24 w-24 text-secondary" />
         </div>
         <div className="flex-1">
-          <h3 className="text-white font-medium text-xl">Edição de Dados</h3>
+          <h3 className="text-primary font-medium text-xl">Edição de Dados</h3>
         </div>
       </div>
     </div>

@@ -2,101 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =========================
+   FONTES E RESET BÁSICO
+   ========================= */
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@layer utilities {
-  .bg-slate-100-var {
-    background-color: rgb(var(--slate-100));
-  }
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
-/* Reset básico e fontes */
 html, body {
   height: 100%;
   margin: 0;
@@ -105,92 +17,87 @@ html, body {
   color: var(--color-foreground);
 }
 
-/* Variáveis de cor centralizadas */
+/* =========================
+   VARIÁVEIS DE COR (ROOT)
+   ========================= */
 :root {
-  --color-primary: #193257;         /* Exemplo: azul principal */
-  --color-secondary: #00c2f7;       /* Exemplo: azul claro */
-  --color-background: #f6f9fc;      /* Fundo claro */
-  --color-surface: #ffffff;         /* Card claro */
-  --color-surface-alt: #e9eff7;     /* Card alternativo */
-  --color-foreground: #193257;      /* Texto principal */
-  --color-muted: #bfcbe2;           /* Texto secundário/borda */
-  --color-border: #e5e7eb;          /* Borda card */
-  --color-hover: #e3f3fc;           /* Hover card */
+
+  /* Paleta centralizada */
+  --color-primary: #193257;
+  --color-secondary: #00c2f7;
+  --color-background: #f6f9fc;
+  --color-surface: #ffffff;
+  --color-surface-alt: #e9eff7;
+  --color-foreground: #193257;
+  --color-muted: #bfcbe2;
+  --color-border: #e5e7eb;
+  --color-hover: #e3f3fc;
 }
 
+/* =========================
+   VARIÁVEIS DE COR (DARK)
+   ========================= */
 .dark {
+
+
+  /* Paleta centralizada */
   --color-primary: #ffffff;
   --color-secondary: #00c2f7;
-  --color-background: #10244a;      /* Fundo escuro */
-  --color-surface: #193257;         /* Card escuro */
-  --color-surface-alt: #22396b;     /* Card alternativo escuro */
-  --color-foreground: #ffffff;      /* Texto principal escuro */
+  --color-background: #10244a;
+  --color-surface: #193257;
+  --color-surface-alt: #22396b;
+  --color-foreground: #ffffff;
   --color-muted: #bfcbe2;
   --color-border: #22396b;
   --color-hover: #22396b;
 }
 
-/* Ensure main content expands properly when sidebar is hidden */
-.main-content-expanded {
-  width: 100% !important;
-  margin-left: 0 !important;
-}
-
-/* Ensure sidebar is completely hidden when not visible */
-.sidebar-hidden {
-  transform: translateX(-100%) !important;
-  visibility: hidden !important;
-}
-
-/* Ensure proper spacing when sidebar is hidden */
-.content-full-width {
-  margin-left: 0 !important;
-  width: 100% !important;
-}
-
-/* Light theme colors - SLATE PALETTE - MAKE MORE BLUE */
+/* =========================
+   VARIÁVEIS DE COR (SLATE PALETTE)
+   ========================= */
 .light {
-  --primary-blue: 13, 41, 83; /* #0d2953 - Darker blue */
-  --light-blue: 0, 194, 247; /* #00c2f7 */
-  --gray: 229, 231, 235; /* #e5e7eb */
-  --accent-blue: 0, 194, 247; /* #00c2f7 */
-  --slate-900: 13, 41, 83; /* #0d2953 - Texto principal - more blue */
-  --slate-800: 25, 50, 87; /* #193257 - Títulos - more blue */
-  --slate-700: 37, 78, 120; /* #254e78 - Subtítulos - more blue */
-  --slate-600: 49, 97, 139; /* #31618b - Texto médio - more blue */
-  --slate-500: 79, 127, 169; /* #4f7fa9 - Texto secundário - more blue */
-  --slate-400: 119, 157, 199; /* #779dc7 - Texto terciário - more blue */
-  --slate-300: 159, 187, 219; /* #9fbbdb - Bordas claras - more blue */
-  --slate-200: 199, 217, 239; /* #c7d9ef - Backgrounds claros - more blue */
-  --slate-100: 229, 237, 249; /* #e5edf9 - Backgrounds muito claros - more blue */
+  --primary-blue: 13, 41, 83;
+  --light-blue: 0, 194, 247;
+  --gray: 229, 231, 235;
+  --accent-blue: 0, 194, 247;
+  --slate-900: 13, 41, 83;
+  --slate-800: 25, 50, 87;
+  --slate-700: 37, 78, 120;
+  --slate-600: 49, 97, 139;
+  --slate-500: 79, 127, 169;
+  --slate-400: 119, 157, 199;
+  --slate-300: 159, 187, 219;
+  --slate-200: 199, 217, 239;
+  --slate-100: 229, 237, 249;
 }
 
-/* Dark theme colors - IMPROVED CONTRAST */
 .dark {
-  --primary-blue: 25, 50, 87; /* #193257 */
-  --light-blue: 0, 194, 247; /* #00c2f7 */
-  --dark-blue: 10, 39, 86; /* #0a2756 */
-  --darker-blue: 26, 59, 109; /* #1a3b6d */
+  --primary-blue: 25, 50, 87;
+  --light-blue: 0, 194, 247;
+  --dark-blue: 10, 39, 86;
+  --darker-blue: 26, 59, 109;
 }
 
-/* Apply theme colors - SLATE PALETTE FOR LIGHT THEME */
+
+
+/* =========================
+   ESTILOS DE COMPONENTES E TEMAS
+   ========================= */
+
+/* Light theme */
 .light body {
   background-color: #f8fafc;
   color: #0d2953 !important;
 }
 
-/* Force all text to be slate palette in light theme */
 .light * {
   color: #0d2953 !important;
 }
 
-/* Override specific text colors */
 .light h1,
 .light h2,
 .light h3,
-.light h4,
-.light h5,
-.light h6 {
+.light h5 {
   color: #0d2953 !important;
 }
 
@@ -200,69 +107,18 @@ html, body {
   color: #193257 !important;
 }
 
-/* Button text should be slate */
 .light button {
   color: #0d2953 !important;
 }
 
-/* Card backgrounds */
-
-
-.light .bg-\[\#1a3b6d\] {
-  background-color: #ffffff !important;
-  border: 1px solid #c1cee3;
-  box-shadow: 0 1px 3px 0 rgba(13, 41, 83, 0.1), 0 1px 2px 0 rgba(13, 41, 83, 0.06);
-}
-
-/* Main content area */
 .light main {
   background-color: #f0f4fa !important;
 }
 
-/* Card icons and button backgrounds - light gray backgrounds */
-.light .bg-\[\#0a2756\].p-6,
-.light .bg-\[\#e5e7eb\].p-6,
-.light .bg-\[\#e5e7eb\].p-4,
-.light .bg-\[\#e5e7eb\].p-3,
-.light .bg-\[\#0a2756\].p-4,
-.light .bg-\[\#0a2756\].p-3,
-.light .bg-\[\#f3f4f6\].p-4,
-.light .bg-\[\#f3f4f6\].p-6 {
-  background-color: #e0e7f2 !important;
-  border: 1px solid #c1cee3;
-}
-
-/* Hover states - slightly darker gray */
-.light .hover\:bg-\[\#1a3b6d\]:hover,
-.light .hover\:bg-\[\#c8d3e4\]:hover,
-.light .hover\:bg-\[\#c8d3e4\]\/10:hover,
-.light .hover\:bg-\[\#e5e7eb\]:hover,
-.light .hover\:bg-\[\#f3f4f6\]:hover,
-.light .hover\:bg-\[\#f9fafb\]:hover,
-.light .hover\:bg-\[\#f8fafc\]:hover {
-  background-color: #c1cee3 !important;
-  border-color: #00c2f7;
-}
-
-.light .group-hover\:bg-sky-600\/20,
-.light .group-hover\:bg-\[\#00c2f7\]\/20,
-.light .group-hover\:bg-\[\#f3f4f6\],
-.light .group-hover\:bg-\[\#f9fafb\] {
-  background-color: #c1cee3 !important;
-  border-color: #00c2f7;
-}
-
-/* Main content background */
-.light .min-h-screen.bg-\[\#c8d3e4\] {
-  background-color: #f0f4fa !important;
-}
-
-/* Fix main app background */
 .light .min-h-screen {
   background-color: #f0f4fa !important;
 }
 
-/* Header styles */
 .light header {
   background-color: #ffffff !important;
   border-bottom: 1px solid #c1cee3;
@@ -280,7 +136,6 @@ html, body {
   color: #1f3b65 !important;
 }
 
-/* Fix hamburger menu icon visibility in light theme */
 .light header button svg {
   color: #193257 !important;
 }
@@ -289,7 +144,6 @@ html, body {
   color: #0d2953 !important;
 }
 
-/* Sidebar styles */
 .light aside {
   background-color: #ffffff !important;
   border-right: 1px solid #c1cee3;
@@ -303,320 +157,68 @@ html, body {
   color: #46618b !important;
 }
 
-.light aside .hover\:bg-\[\#c8d3e4\]\/10:hover,
-.light aside .hover\:bg-\[\#c8d3e4\]:hover {
-  background-color: #e0e7f2 !important;
-}
 
-.light aside .bg-\[\#c8d3e4\]\/10,
-.light aside .bg-\[\#c8d3e4\] {
-  background-color: #e0e7f2 !important;
-}
-
-/* Welcome banner */
-.light .bg-\[\#193257\].p-8.mb-8,
-.light .bg-\[\#1a3b6d\].p-8.mb-8 {
-  background-color: #193257 !important;
-  border: 1px solid #c1cee3;
-}
-
-.light .bg-\[\#193257\].p-8.mb-8 h1,
-.light .bg-\[\#193257\].p-8.mb-8 p,
-.light .bg-\[\#1a3b6d\].p-8.mb-8 h1,
-.light .bg-\[\#1a3b6d\].p-8.mb-8 p {
-  color: #0d2953 !important;
-}
-
-/* Card icons - keep blue but ensure contrast */
-.light .text-\[\#00c2f7\],
 .light .text-sky-400 {
   color: #0d2953 !important;
 }
 
-/* Hover states for cards */
-.light .hover\:bg-sky-700:hover {
-  background-color: #c1cee3 !important;
-}
-
-.light .hover\:bg-\[\#1a3b6d\]:hover {
-  background-color: #c1cee3 !important;
-}
-
-/* Accordion styles */
 .light .accordion-content {
   background-color: #e0e7f2 !important;
 }
 
-/* Switch component */
-.light .data-\[state\=unchecked\]\:bg-\[\#c8d3e4\] {
-  background-color: #c1cee3 !important;
-}
-
-/* Card hover overlay */
 .light .absolute.inset-0.bg-white {
   background-color: #ffffff !important;
 }
 
-.light .absolute.inset-0.bg-\[\#1a3b6d\] {
-  background-color: #ffffff !important;
-}
-
-/* Breadcrumb text */
 .light .text-white {
   color: #1f3b65 !important;
 }
 
-/* Opacity text should still be visible */
 .light .opacity-50 {
   color: #778cb1 !important;
 }
 
-/* Gray text variations */
 .light .text-gray-300 {
   color: #46618b !important;
 }
 
-.light .text-gray-400 {
-  color: #778cb1 !important;
-}
+/* Dark theme */
 
-.light .text-\[\#4b5563\] {
-  color: #46618b !important;
-}
-
-/* Button specific styling */
-.light .bg-white.hover\:border-\[\#00c2f7\] {
-  background-color: #f0f4fa !important;
-  color: #1f3b65 !important;
-  border: 1px solid #c1cee3;
-}
-
-.light .bg-white.hover\:border-\[\#00c2f7\]:hover {
-  background-color: #e0e7f2 !important;
-  border-color: #00c2f7 !important;
-}
-
-/* Year selector dropdown - FIX CONTRAST ISSUE */
-.light .bg-white.border.border-\[\#e5e7eb\] {
-  background-color: #ffffff !important;
-  color: #1f3b65 !important;
-  border: 1px solid #c1cee3;
-}
-
-
-.light .hover\:bg-\[\#f0f4fa\]:hover {
-  background-color: #e0e7f2 !important;
-  color: #0d2953 !important;
-}
-
-/* Ensure all borders are visible */
-.light .border-\[\#e5e7eb\] {
-  border-color: #c1cee3 !important;
-}
-
-.light .border-\[\#c1cee3\] {
-  border-color: #c1cee3 !important;
-}
-
-/* DARK THEME SPECIFIC STYLES - MATCH SECOND IMAGE */
-.dark .bg-\[\#0a2756\] {
-  background-color: #0a2756;
-}
-
-.dark .bg-\[\#1a3b6d\] {
-  background-color: #1a3b6d;
-}
-
-/* Icon colors in dark theme */
-.light .text-\[\#00c2f7\],
-.light .text-sky-400 {
-  color: #0d2953 !important;
-}
-
-/* Corrigir bordas dos ícones e containers */
 .dark .rounded-full,
 .dark .rounded-md {
   border-color: #1a3b6d !important;
 }
 
-/* Corrigir bordas dos botões no hover overlay */
-.dark .bg-white.hover\:border-\[\#00c2f7\] {
-  border-color: #1a3b6d !important;
-}
-
-.dark .bg-white.hover\:border-\[\#00c2f7\]:hover {
-  border-color: #38bdf8 !important;
-}
-
-/* Mobile responsive styles */
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
 @media (max-width: 768px) {
-  .grid-cols-4 {
-    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
-  }
-
-  .grid-cols-3 {
-    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
-  }
-
+  .grid-cols-4,
+  .grid-cols-3,
   .grid-cols-2 {
     grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
   }
-
   .h-64 {
     height: auto !important;
     min-height: 200px;
   }
-
   .p-8 {
     padding: 1rem !important;
   }
-
   .text-5xl {
     font-size: 1.5rem !important;
   }
-
   .text-2xl {
     font-size: 1.25rem !important;
   }
-
   .gap-8 {
     gap: 1rem !important;
   }
-
-  /* Adjust header for mobile */
   header {
     padding: 0.5rem !important;
   }
-
   header h1 {
     font-size: 1rem !important;
   }
-
-  /* Ensure dropdowns stack properly on mobile */
-  .flex.flex-col.md\:flex-row {
-    flex-direction: column !important;
-  }
 }
 
-.light header button[aria-label="Toggle sidebar"]:hover {
-  background-color: #e0e7f2 !important;
-  border-color: #00c2f7 !important;
-}
-
-.light header button[aria-label="Toggle sidebar"] svg {
-  color: #0d2953 !important;
-}
-
-.dark header button[aria-label="Toggle sidebar"] {
-  color: white !important;
-  border: 1px solid #38bdf8 !important;
-  background-color: #0a2756 !important;
-}
-
-.dark header button[aria-label="Toggle sidebar"]:hover {
-  background-color: #1a3b6d !important;
-}
-
-.dark header button[aria-label="Toggle sidebar"] svg {
-  color: white !important;
-}
-
-/* Force sidebar toggle button visibility */
-header button[aria-label="Toggle sidebar"] {
-  background-color: white !important;
-  color: #0d2953 !important;
-  border: 2px solid #0d2953 !important;
-}
-
-.dark header button[aria-label="Toggle sidebar"] {
-  background-color: #0a2756 !important;
-  color: white !important;
-  border: 2px solid white !important;
-}
-
-header button[aria-label="Toggle sidebar"]:hover {
-  background-color: #e0e7f2 !important;
-}
-
-.dark header button[aria-label="Toggle sidebar"]:hover {
-  background-color: #1a3b6d !important;
-}
-
-header button[aria-label="Toggle sidebar"] svg {
-  color: inherit !important;
-}
-
-/* Ensure dropdown buttons in gestão de vagas are always white with dark text */
-.bg-white.hover\:border-\[\#00c2f7\].text-\[\#0d2953\] {
-  background-color: white !important;
-  color: #0d2953 !important;
-  border: 1px solid #c1cee3 !important;
-}
-
-.dark .bg-white.hover\:border-\[\#00c2f7\].text-\[\#0d2953\] {
-  background-color: white !important;
-  color: #0d2953 !important;
-  border: 1px solid #c1cee3 !important;
-}
-
-/* Force all buttons in hover overlays to be white */
-/*
-.absolute.inset-0 button,
-.absolute.inset-0 .w-full {
-  background-color: white !important;
-  color: #0d2953 !important;
-  border: 1px solid #c1cee3 !important;
-}
-
-.dark .absolute.inset-0 button,
-.dark .absolute.inset-0 .w-full {
-  background-color: #1a3b6d !important;
-  color: white !important;
-  border: 1px solid #0a2756 !important;
-}
-*/
-
-/* --- MANTENHA ESTA REGRA PARA GARANTIR TRANSPARÊNCIA --- */
-.menu-float-btn,
-.menu-float-btn * {
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-/* Remove unnecessary borders/outlines */
-header button,
-.inline-flex.items-center.justify-center {
-  border: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
-
-.dark header button,
-.dark .inline-flex.items-center.justify-center {
-  border: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
-
-/* Ensure dropdown items in dark theme have proper styling */
-.dark .py-1 button {
-  background-color: transparent !important;
-  color: white !important;
-}
-
-.dark .py-1 button:hover,
-.dark .py-1 button.font-medium {
-  background-color: #1a3b6d !important;
-}
-
-.menu-float-btn,
-.menu-float-btn * {
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-.dark {
-  --color-hover: #294072; /* Um tom mais claro que --color-surface-alt */
-}
