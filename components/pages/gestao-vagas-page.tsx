@@ -1,16 +1,12 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { ArrowLeft, ClipboardList, Users2, Home, CloudDownload, BookOpen, Download } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { ClipboardList, Users2, Home, CloudDownload, BookOpen, Download } from "lucide-react"
 import { YearSelector } from "@/components/year-selector"
 import { AgeGroupSelector } from "@/components/age-group-selector"
+import Link from "next/link"
 
-interface PageProps {
-  onBack: () => void
-}
-
-export function GestaoVagasPage({ onBack }: PageProps) {
+export function GestaoVagasPage() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null)
   const [selectedYear, setSelectedYear] = useState("2025")
   const [selectedAgeGroup, setSelectedAgeGroup] = useState("Adultos")
@@ -20,10 +16,8 @@ export function GestaoVagasPage({ onBack }: PageProps) {
     unidades: useRef<HTMLDivElement>(null),
   }
 
-  // Detecta mobile
   const isMobile = typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches
 
-  // Fecha overlay ao clicar fora
   useEffect(() => {
     if (!hoveredCard) return
     function handleClick(e: MouseEvent | TouchEvent) {
@@ -45,7 +39,6 @@ export function GestaoVagasPage({ onBack }: PageProps) {
   }
 
   const getUrls = () => {
-    let ageGroupPath = ""
     let dadosGerais = ""
     let painelGeral = ""
     let painelVagas = ""
@@ -54,38 +47,7 @@ export function GestaoVagasPage({ onBack }: PageProps) {
     let monitoramento = ""
 
     switch (`${selectedYear}+${selectedAgeGroup}`) {
-      case "2024+Crianças e Adolescentes":
-        ageGroupPath = "/criancas-adolescentes"
-        dadosGerais = ""
-        painelGeral = ""
-        painelVagas = ""
-        painelUsuarios = ""
-        painelConfirmacao = ""
-        monitoramento = ""
-        break
-
-      case "2024+Adultos":
-        ageGroupPath = "/adultos"
-        dadosGerais = ""
-        painelGeral = ""
-        painelVagas = ""
-        painelUsuarios = ""
-        painelConfirmacao = ""
-        monitoramento = ""
-        break
-
-      case "2025+Crianças e Adolescentes":
-        ageGroupPath = "/criancas-adolescentes"
-        dadosGerais = ""
-        painelGeral = ""
-        painelVagas = ""
-        painelUsuarios = ""
-        painelConfirmacao = ""
-        monitoramento = ""
-        break
-
       case "2025+Adultos":
-        ageGroupPath = "/adultos"
         dadosGerais = "https://siurb.rio/portal/apps/dashboards/74c18901ba6642f9ab90324ba5a0da3c"
         painelGeral = "https://siurb.rio/portal/apps/dashboards/1c2cfa2d92d54abf8d0c3878ee053930"
         painelVagas = "https://siurb.rio/portal/apps/dashboards/6a156eb991f04e559d0a214c27a39e87"
@@ -93,9 +55,7 @@ export function GestaoVagasPage({ onBack }: PageProps) {
         painelConfirmacao = "https://siurb.rio/portal/apps/dashboards/dbb3a0990b3c4b2e91d17c97855c36d8"
         monitoramento = "https://siurb.rio/portal/apps/dashboards/dac8bb78571e400cbefd21e87219d03e"
         break
-
       default:
-        ageGroupPath = "/default"
         dadosGerais = ""
         painelGeral = ""
         painelVagas = ""
@@ -124,14 +84,14 @@ export function GestaoVagasPage({ onBack }: PageProps) {
     <div className="space-y-8">
       <div className="bg-surface rounded-md p-8 border border-border shadow-sm">
         <div className="flex items-center gap-3 text-primary mb-6">
-          <button
-            onClick={onBack}
+          <Link
+            href="/homepage"
             className="flex items-center gap-2 text-primary text-lg group p-0 h-auto"
             style={{ WebkitTapHighlightColor: "transparent" }}
           >
-            <ArrowLeft className="h-7 w-7" />
+            {/* Você pode usar um ícone de voltar se quiser */}
             <span className="group-hover:underline transition">Página inicial</span>
-          </button>
+          </Link>
           <span>/</span>
           <span className="text-2xl font-bold text-primary flex items-center h-7">Gestão de Vagas</span>
         </div>
