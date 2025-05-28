@@ -20,33 +20,16 @@ export default function HomePage() {
   useEffect(() => {
     const checkIfMobile = () => {
       setIsMobile(window.innerWidth < 768)
-      // On desktop, sidebar should be visible by default, but can be toggled
-      if (window.innerWidth >= 768) {
-        // Don't automatically set sidebar visible here, let the toggle button control it
-        if (sidebarVisible === undefined) {
-          setSidebarVisible(true)
-        }
-      } else {
-        setSidebarVisible(false)
-      }
     }
-
-    // Initial check
     checkIfMobile()
-
-    // Add event listener for window resize
     window.addEventListener("resize", checkIfMobile)
-
-    // Cleanup
-    return () => {
-      window.removeEventListener("resize", checkIfMobile)
-    }
+    return () => window.removeEventListener("resize", checkIfMobile)
   }, [])
 
   // Create overlay for mobile when sidebar is open
   const Overlay = () => {
     if (isMobile && sidebarVisible) {
-      return <div className="fixed inset-0 bg-opacity-50 z-40" onClick={() => setSidebarVisible(false)} />
+      return <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setSidebarVisible(false)} />
     }
     return null
   }
@@ -231,16 +214,15 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       <Header sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible} setCurrentPage={setCurrentPage} />
-      <Overlay />
       <div className="flex relative">
-        <Menu setCurrentPage={setCurrentPage} sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible} />
-        <main
-          className={`transition-all duration-300 bg-background p-4 md:p-8 ${
-            sidebarVisible && !isMobile ? "flex-1 ml-0" : "w-full ml-0"
-          }`}
-        >
-          {renderPage()}
-        </main>
+        {sidebarVisible && (
+          <Menu
+            setCurrentPage={setCurrentPage}
+            sidebarVisible={sidebarVisible}
+            setSidebarVisible={setSidebarVisible}
+          />
+        )}
+        <main className="flex-1 p-4 md:p-8 transition-all duration-300">{renderPage()}</main>
       </div>
     </div>
   )
