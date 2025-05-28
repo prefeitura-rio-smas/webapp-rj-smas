@@ -2,14 +2,10 @@
 
 import { useState } from "react"
 import { ArrowLeft, BarChart, BarChart2, FileText, CloudDownload, ClipboardList } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import { YearSelector } from "@/components/year-selector"
 
-interface PageProps {
-  onBack: () => void
-}
-
-export function AbordagemSocialPage({ onBack }: PageProps) {
+export function AbordagemSocialPage() {
   const [selectedYear, setSelectedYear] = useState("2025")
 
   // Function to handle external links
@@ -50,14 +46,14 @@ export function AbordagemSocialPage({ onBack }: PageProps) {
     <div className="space-y-8">
       <div className="bg-surface rounded-md p-8 border border-border shadow-sm">
         <div className="flex items-center gap-3 text-primary mb-6">
-          <button
-            onClick={onBack}
+          <Link
+            href="/homepage"
             className="flex items-center gap-2 text-primary text-lg group p-0 h-auto"
             style={{ WebkitTapHighlightColor: "transparent" }}
           >
             <ArrowLeft className="h-7 w-7" />
             <span className="group-hover:underline transition">Página inicial</span>
-          </button>
+          </Link>
           <span>/</span>
           <span className="text-2xl font-bold text-primary flex items-center h-7">Abordagem Social</span>
         </div>
@@ -83,33 +79,33 @@ export function AbordagemSocialPage({ onBack }: PageProps) {
       <YearSelector currentYear={selectedYear} onYearChange={setSelectedYear} />
 
       <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-      {[
-        {
-          url: urls.abordagemSocial,
-          icon: <BarChart className="h-24 w-24 text-sky-400" />,
-          label: `Abordagem Social ${selectedYear}`,
-        },
-        {
-          url: urls.painelGeral,
-          icon: <BarChart2 className="h-24 w-24 text-sky-400" />,
-          label: "Painel Geral de Atendimentos",
-        },
-        {
-          url: urls.coordenadoria,
-          icon: <BarChart className="h-24 w-24 text-sky-400" />,
-          label: "Coordenadoria",
-        },
-        {
-          url: urls.creas,
-          icon: <BarChart className="h-24 w-24 text-sky-400" />,
-          label: "CREAS",
-        },
-        {
-          url: urls.centroPop,
-          icon: <BarChart className="h-24 w-24 text-sky-400" />,
-          label: "Centro Pop",
-        }
-      ].map(({ url, icon, label }) => (
+        {[
+          {
+            url: urls.abordagemSocial,
+            icon: <BarChart className="h-24 w-24 text-sky-400" />,
+            label: `Abordagem Social ${selectedYear}`,
+          },
+          {
+            url: urls.painelGeral,
+            icon: <BarChart2 className="h-24 w-24 text-sky-400" />,
+            label: "Painel Geral de Atendimentos",
+          },
+          {
+            url: urls.coordenadoria,
+            icon: <BarChart className="h-24 w-24 text-sky-400" />,
+            label: "Coordenadoria",
+          },
+          {
+            url: urls.creas,
+            icon: <BarChart className="h-24 w-24 text-sky-400" />,
+            label: "CREAS",
+          },
+          {
+            url: urls.centroPop,
+            icon: <BarChart className="h-24 w-24 text-sky-400" />,
+            label: "Centro Pop",
+          }
+        ].map(({ url, icon, label }) => (
           <div
             key={label}
             className="bg-surface rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
