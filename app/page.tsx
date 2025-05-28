@@ -213,16 +213,26 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header sidebarVisible={sidebarVisible} setSidebarVisible={setSidebarVisible} setCurrentPage={setCurrentPage} />
+      <Header
+        sidebarVisible={sidebarVisible}
+        setSidebarVisible={setSidebarVisible}
+        setCurrentPage={setCurrentPage}
+      />
+      <Overlay />
       <div className="flex relative">
         {sidebarVisible && (
           <Menu
             setCurrentPage={setCurrentPage}
             sidebarVisible={sidebarVisible}
             setSidebarVisible={setSidebarVisible}
+            isMobile={isMobile}
           />
         )}
-        <main className="flex-1 p-4 md:p-8 transition-all duration-300">{renderPage()}</main>
+        <main
+          className={`flex-1 p-4 md:p-8 transition-all duration-300 ${sidebarVisible && isMobile ? "hidden" : ""}`}
+        >
+          {renderPage()}
+        </main>
       </div>
     </div>
   )

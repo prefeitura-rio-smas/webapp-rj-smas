@@ -9,9 +9,10 @@ interface MenuProps {
   setCurrentPage: (page: string | null) => void
   sidebarVisible: boolean
   setSidebarVisible: (visible: boolean) => void
+  isMobile: boolean
 }
 
-export function Menu({ setCurrentPage, sidebarVisible, setSidebarVisible }: MenuProps) {
+export function Menu({ setCurrentPage, sidebarVisible, setSidebarVisible, isMobile }: MenuProps) {
   // Close sidebar when clicking on a menu item on mobile
   const handleMenuItemClick = (action: () => void) => {
     const isMobile = window.innerWidth < 768
@@ -181,9 +182,12 @@ export function Menu({ setCurrentPage, sidebarVisible, setSidebarVisible }: Menu
 
   return (
     <aside
-      className={`fixed md:relative z-50 bg-surface-alt border-r border-border min-h-[calc(100vh-64px)] transition-all duration-300
-    ${sidebarVisible ? "left-0 w-64 md:w-60" : "-left-full w-0"}
-    md:left-0 md:w-60`}
+      className={
+        isMobile
+          ? "fixed left-0 right-0 top-16 bottom-0 w-full h-auto z-50 bg-surface-alt border-b border-border"
+          : "relative w-64 min-h-screen bg-surface-alt border-r border-border"
+      }
+      style={isMobile ? { maxHeight: "calc(100vh - 64px)" } : {}}
     >
       <nav className="p-4">
         <div className="mb-6">
