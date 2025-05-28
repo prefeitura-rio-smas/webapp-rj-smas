@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { ArrowLeft, ClipboardList, Users2, Home, CloudDownload, BookOpen, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { YearSelector } from "@/components/year-selector"
@@ -14,6 +14,31 @@ export function GestaoVagasPage({ onBack }: PageProps) {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null)
   const [selectedYear, setSelectedYear] = useState("2025")
   const [selectedAgeGroup, setSelectedAgeGroup] = useState("Adultos")
+  const cardRefs = {
+    gestao: useRef<HTMLDivElement>(null),
+    abordagem: useRef<HTMLDivElement>(null),
+    unidades: useRef<HTMLDivElement>(null),
+  }
+
+  // Detecta mobile
+  const isMobile = typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches
+
+  // Fecha overlay ao clicar fora
+  useEffect(() => {
+    if (!hoveredCard) return
+    function handleClick(e: MouseEvent | TouchEvent) {
+      const ref = cardRefs[hoveredCard as keyof typeof cardRefs]
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setHoveredCard(null)
+      }
+    }
+    document.addEventListener("mousedown", handleClick)
+    document.addEventListener("touchstart", handleClick)
+    return () => {
+      document.removeEventListener("mousedown", handleClick)
+      document.removeEventListener("touchstart", handleClick)
+    }
+  }, [hoveredCard])
 
   const openExternalLink = (url: string) => {
     window.open(url, "_blank")
@@ -123,9 +148,14 @@ export function GestaoVagasPage({ onBack }: PageProps) {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Gestão 2025 Card */}
         <div
+          ref={cardRefs.gestao}
           className="bg-surface rounded-md p-8 flex flex-col h-48 relative overflow-hidden border border-border shadow-sm"
-          onMouseEnter={() => setHoveredCard("gestao")}
-          onMouseLeave={() => setHoveredCard(null)}
+          onMouseEnter={!isMobile ? () => setHoveredCard("gestao") : undefined}
+          onMouseLeave={!isMobile ? () => setHoveredCard(null) : undefined}
+          onTouchStart={isMobile ? (e) => {
+            e.stopPropagation()
+            setHoveredCard(hoveredCard === "gestao" ? null : "gestao")
+          } : undefined}
         >
           <div className="flex flex-1 items-center gap-6">
             <div className="bg-surface-alt p-6 rounded-md flex items-center justify-center border border-border h-24 w-24 min-w-[6rem] min-h-[6rem]">
@@ -146,13 +176,15 @@ export function GestaoVagasPage({ onBack }: PageProps) {
           >
             <button
               className="w-full bg-surface text-primary border border-border hover:bg-hover hover:border-primary px-4 py-2 rounded-md font-medium transition-colors"
-              onClick={() => openExternalLink(urls.dadosGerais)}
+              onClick={(e) => { e.stopPropagation(); openExternalLink(urls.dadosGerais) }}
+              onTouchStart={(e) => e.stopPropagation()}
             >
               Dados Gerais Acolhimento {selectedYear}
             </button>
             <button
               className="w-full bg-surface text-primary border border-border hover:bg-hover hover:border-primary px-4 py-2 rounded-md font-medium transition-colors"
-              onClick={() => openExternalLink(urls.painelGeral)}
+              onClick={(e) => { e.stopPropagation(); openExternalLink(urls.painelGeral) }}
+              onTouchStart={(e) => e.stopPropagation()}
             >
               Painel Geral de Vagas
             </button>
@@ -161,9 +193,14 @@ export function GestaoVagasPage({ onBack }: PageProps) {
 
         {/* Abordagem Social Card */}
         <div
+          ref={cardRefs.abordagem}
           className="bg-surface rounded-md p-8 flex flex-col h-48 relative overflow-hidden border border-border shadow-sm"
-          onMouseEnter={() => setHoveredCard("abordagem")}
-          onMouseLeave={() => setHoveredCard(null)}
+          onMouseEnter={!isMobile ? () => setHoveredCard("abordagem") : undefined}
+          onMouseLeave={!isMobile ? () => setHoveredCard(null) : undefined}
+          onTouchStart={isMobile ? (e) => {
+            e.stopPropagation()
+            setHoveredCard(hoveredCard === "abordagem" ? null : "abordagem")
+          } : undefined}
         >
           <div className="flex flex-1 items-center gap-6">
             <div className="bg-surface-alt p-6 rounded-md flex items-center justify-center border border-border h-24 w-24 min-w-[6rem] min-h-[6rem]">
@@ -182,13 +219,15 @@ export function GestaoVagasPage({ onBack }: PageProps) {
           >
             <button
               className="w-full bg-surface text-primary border border-border hover:bg-hover hover:border-primary px-4 py-2 rounded-md font-medium transition-colors"
-              onClick={() => openExternalLink(urls.painelVagas)}
+              onClick={(e) => { e.stopPropagation(); openExternalLink(urls.painelVagas) }}
+              onTouchStart={(e) => e.stopPropagation()}
             >
               Painel de Vagas
             </button>
             <button
               className="w-full bg-surface text-primary border border-border hover:bg-hover hover:border-primary px-4 py-2 rounded-md font-medium transition-colors"
-              onClick={() => openExternalLink(urls.painelUsuarios)}
+              onClick={(e) => { e.stopPropagation(); openExternalLink(urls.painelUsuarios) }}
+              onTouchStart={(e) => e.stopPropagation()}
             >
               Painel Geral de Usuários
             </button>
@@ -197,9 +236,14 @@ export function GestaoVagasPage({ onBack }: PageProps) {
 
         {/* Unidades de Acolhimento Card */}
         <div
+          ref={cardRefs.unidades}
           className="bg-surface rounded-md p-8 flex flex-col h-48 relative overflow-hidden border border-border shadow-sm"
-          onMouseEnter={() => setHoveredCard("unidades")}
-          onMouseLeave={() => setHoveredCard(null)}
+          onMouseEnter={!isMobile ? () => setHoveredCard("unidades") : undefined}
+          onMouseLeave={!isMobile ? () => setHoveredCard(null) : undefined}
+          onTouchStart={isMobile ? (e) => {
+            e.stopPropagation()
+            setHoveredCard(hoveredCard === "unidades" ? null : "unidades")
+          } : undefined}
         >
           <div className="flex flex-1 items-center gap-6">
             <div className="bg-surface-alt p-6 rounded-md flex items-center justify-center border border-border h-24 w-24 min-w-[6rem] min-h-[6rem]">
@@ -218,13 +262,15 @@ export function GestaoVagasPage({ onBack }: PageProps) {
           >
             <button
               className="w-full bg-surface text-primary border border-border hover:bg-hover hover:border-primary px-4 py-2 rounded-md font-medium transition-colors"
-              onClick={() => openExternalLink(urls.painelConfirmacao)}
+              onClick={(e) => { e.stopPropagation(); openExternalLink(urls.painelConfirmacao) }}
+              onTouchStart={(e) => e.stopPropagation()}
             >
               Painel de Confirmação
             </button>
             <button
               className="w-full bg-surface text-primary border border-border hover:bg-hover hover:border-primary px-4 py-2 rounded-md font-medium transition-colors"
-              onClick={() => openExternalLink(urls.monitoramento)}
+              onClick={(e) => { e.stopPropagation(); openExternalLink(urls.monitoramento) }}
+              onTouchStart={(e) => e.stopPropagation()}
             >
               Monitoramento de Ocupação e Desligamento
             </button>
