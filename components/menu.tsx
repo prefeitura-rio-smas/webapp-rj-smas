@@ -1,22 +1,23 @@
 "use client"
 
 import { useEffect } from "react"
+import { useRouter } from "next/navigation"
 import { Home, Shield, Users, FileText } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { MenuItem } from "@/components/menu-item"
 
 interface MenuProps {
-  setCurrentPage: (page: string | null) => void
   sidebarVisible: boolean
   setSidebarVisible: (visible: boolean) => void
   isMobile: boolean
 }
 
-export function Menu({ setCurrentPage, sidebarVisible, setSidebarVisible, isMobile }: MenuProps) {
-  // Close sidebar when clicking on a menu item on mobile
+export function Menu({ sidebarVisible, setSidebarVisible, isMobile }: MenuProps) {
+  const router = useRouter()
+
+  // Fecha sidebar ao clicar em um item no mobile
   const handleMenuItemClick = (action: () => void) => {
-    const isMobile = window.innerWidth < 768
-    if (isMobile) {
+    if (window.innerWidth < 768) {
       action()
       setSidebarVisible(false)
     } else {
@@ -26,13 +27,11 @@ export function Menu({ setCurrentPage, sidebarVisible, setSidebarVisible, isMobi
 
   // Add body overflow hidden when sidebar is open on mobile
   useEffect(() => {
-    const isMobile = window.innerWidth < 768
-    if (isMobile && sidebarVisible) {
+    if (window.innerWidth < 768 && sidebarVisible) {
       document.body.style.overflow = "hidden"
     } else {
       document.body.style.overflow = "auto"
     }
-
     return () => {
       document.body.style.overflow = "auto"
     }
@@ -47,13 +46,13 @@ export function Menu({ setCurrentPage, sidebarVisible, setSidebarVisible, isMobi
         {
           id: "emergencia",
           title: "Emergência Socioassistencial",
-          action: () => handleMenuItemClick(() => setCurrentPage("emergencia")),
+          action: () => handleMenuItemClick(() => router.push("/psb/emergencia")),
           isExternal: false,
         },
         {
           id: "cartao",
           title: "Cartão Protege SUAS",
-          action: () => handleMenuItemClick(() => setCurrentPage("cartao-protege")),
+          action: () => handleMenuItemClick(() => router.push("/psb/cartao")),
           isExternal: false,
         },
         {
@@ -68,7 +67,7 @@ export function Menu({ setCurrentPage, sidebarVisible, setSidebarVisible, isMobi
         {
           id: "documentacao",
           title: "Documentação",
-          action: () => handleMenuItemClick(() => setCurrentPage("documentacao")),
+          action: () => handleMenuItemClick(() => router.push("/psb/docs")),
           isExternal: false,
         },
       ],
@@ -81,13 +80,13 @@ export function Menu({ setCurrentPage, sidebarVisible, setSidebarVisible, isMobi
         {
           id: "abordagem",
           title: "Abordagem Social",
-          action: () => handleMenuItemClick(() => setCurrentPage("abordagem-social")),
+          action: () => handleMenuItemClick(() => router.push("/pse/abordagem")),
           isExternal: false,
         },
         {
           id: "gestao",
           title: "Gestão de Vagas",
-          action: () => handleMenuItemClick(() => setCurrentPage("gestao-vagas")),
+          action: () => handleMenuItemClick(() => router.push("/pse/gestao")),
           isExternal: false,
         },
         {
@@ -96,7 +95,7 @@ export function Menu({ setCurrentPage, sidebarVisible, setSidebarVisible, isMobi
           action: () =>
             handleMenuItemClick(() =>
               window.open(
-                "https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social/servicos-e-programas-1",
+                "https://censorua-pcrj.hub.arcgis.com",
                 "_blank",
               ),
             ),
@@ -114,7 +113,7 @@ export function Menu({ setCurrentPage, sidebarVisible, setSidebarVisible, isMobi
           title: "Painéis de Monitoramento",
           action: () =>
             handleMenuItemClick(() =>
-              window.open("https://www.gov.br/cidadania/pt-br/acoes-e-programas/cadastro-unico", "_blank"),
+              window.open("https://siurb.rio/portal/apps/experiencebuilder/experience/?id=46630a95c6cf44e2b228311efabc1aad&page=Monitoramento-2025&views=PROFISSIONAIS-%28RH%29", "_blank"),
             ),
           isExternal: true,
         },
@@ -123,14 +122,14 @@ export function Menu({ setCurrentPage, sidebarVisible, setSidebarVisible, isMobi
           title: "Edição de Dados CTR",
           action: () =>
             handleMenuItemClick(() =>
-              window.open("https://www.gov.br/cidadania/pt-br/acoes-e-programas/cadastro-unico", "_blank"),
+              window.open("https://siurb.rio/portal/apps/dashboards/c710bb4dd3a54508ba338284d4b81816", "_blank"),
             ),
           isExternal: true,
         },
         {
           id: "formularios",
           title: "Formulários",
-          action: () => handleMenuItemClick(() => setCurrentPage("formularios")),
+          action: () => handleMenuItemClick(() => router.push("/cad/forms")),
           isExternal: false,
         },
         {
@@ -139,7 +138,7 @@ export function Menu({ setCurrentPage, sidebarVisible, setSidebarVisible, isMobi
           action: () =>
             handleMenuItemClick(() =>
               window.open(
-                "https://www.gov.br/cidadania/pt-br/acoes-e-programas/cadastro-unico/gestao-do-cadastro-unico-1",
+                "https://siurb.rio/portal/apps/webappviewer/index.html?id=7055563587a2431ab4d23d342274d189",
                 "_blank",
               ),
             ),
@@ -158,7 +157,7 @@ export function Menu({ setCurrentPage, sidebarVisible, setSidebarVisible, isMobi
           action: () =>
             handleMenuItemClick(() =>
               window.open(
-                "https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social/vigilancia-socioassistencial",
+                "https://drive.google.com/file/d/1jpae1Az5tLwIdVXZoTR_o3ydF1PVYggr/view",
                 "_blank",
               ),
             ),
@@ -170,7 +169,7 @@ export function Menu({ setCurrentPage, sidebarVisible, setSidebarVisible, isMobi
           action: () =>
             handleMenuItemClick(() =>
               window.open(
-                "https://www.gov.br/cidadania/pt-br/acoes-e-programas/assistencia-social/vigilancia-socioassistencial",
+                "https://drive.google.com/file/d/1ED0DnH9g_Kc7r0tUREbYHHeXUmlSMEVC/view",
                 "_blank",
               ),
             ),
@@ -192,7 +191,7 @@ export function Menu({ setCurrentPage, sidebarVisible, setSidebarVisible, isMobi
       <nav className="p-4">
         <div className="mb-6">
           <button
-            onClick={() => handleMenuItemClick(() => setCurrentPage(null))}
+            onClick={() => handleMenuItemClick(() => router.push("/homepage"))}
             className="flex items-center gap-2 text-primary p-3 rounded-md hover:bg-hover active:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary w-full text-left text-base transition-colors"
           >
             <Home className="h-5 w-5" />

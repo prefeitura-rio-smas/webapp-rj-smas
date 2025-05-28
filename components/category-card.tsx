@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Link from "next/link"
 import {
   Shield,
   FileText,
@@ -21,8 +22,9 @@ interface Button {
   id: number
   title: string
   icon: string
-  action: () => void
-  internal: boolean
+  href: string
+  internal?: boolean
+  external?: boolean
 }
 
 interface CategoryCardProps {
@@ -123,32 +125,50 @@ export function CategoryCard({ title, description, buttons }: CategoryCardProps)
         }`}
       >
         <div className="flex flex-wrap justify-center gap-4 md:gap-8 p-4 md:p-6">
-          {buttons.map((button) => (
-            <button
-              key={button.id}
-              onClick={(e) => {
-                e.stopPropagation()
-                button.action()
-                setIsHovered(false)
-              }}
-              className="flex flex-col items-center w-24 md:w-32 text-center group cursor-pointer
-        bg-surface border border-border rounded-lg
-        transition
-        outline-none
-        hover:bg-hover hover:border-primary hover:shadow-lg
-        focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
-            >
-              <div className="p-3 md:p-4 rounded-md mb-2 md:mb-3 flex items-center justify-center">
-                {getButtonIcon(button.icon)}
-              </div>
-              <span className="text-primary text-sm md:text-base group-hover:text-primary transition-colors">
-                {button.title}
-              </span>
-              {!button.internal && (
+          {buttons.map((button) =>
+            button.internal ? (
+              <Link
+                key={button.id}
+                href={button.href}
+                className="flex flex-col items-center w-24 md:w-32 text-center group cursor-pointer
+                  bg-surface border border-border rounded-lg
+                  transition
+                  outline-none
+                  hover:bg-hover hover:border-primary hover:shadow-lg
+                  focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
+                onClick={() => setIsHovered(false)}
+              >
+                <div className="p-3 md:p-4 rounded-md mb-2 md:mb-3 flex items-center justify-center">
+                  {getButtonIcon(button.icon)}
+                </div>
+                <span className="text-primary text-sm md:text-base group-hover:text-primary transition-colors">
+                  {button.title}
+                </span>
+              </Link>
+            ) : (
+              <a
+                key={button.id}
+                href={button.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center w-24 md:w-32 text-center group cursor-pointer
+                  bg-surface border border-border rounded-lg
+                  transition
+                  outline-none
+                  hover:bg-hover hover:border-primary hover:shadow-lg
+                  focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
+                onClick={() => setIsHovered(false)}
+              >
+                <div className="p-3 md:p-4 rounded-md mb-2 md:mb-3 flex items-center justify-center">
+                  {getButtonIcon(button.icon)}
+                </div>
+                <span className="text-primary text-sm md:text-base group-hover:text-primary transition-colors">
+                  {button.title}
+                </span>
                 <span className="text-muted text-xs mt-1">(link externo)</span>
-              )}
-            </button>
-          ))}
+              </a>
+            )
+          )}
         </div>
       </div>
     </div>
