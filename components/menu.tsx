@@ -27,7 +27,7 @@ export function Menu({ sidebarVisible, setSidebarVisible, isMobile }: MenuProps)
 
   // Add body overflow hidden when sidebar is open on mobile
   useEffect(() => {
-    if (isMobile && sidebarVisible) { // Verificando isMobile também aqui para mais precisão
+    if (isMobile && sidebarVisible) {
       document.body.style.overflow = "hidden"
     } else {
       document.body.style.overflow = "auto"
@@ -35,7 +35,7 @@ export function Menu({ sidebarVisible, setSidebarVisible, isMobile }: MenuProps)
     return () => {
       document.body.style.overflow = "auto"
     }
-  }, [sidebarVisible, isMobile]) // Adicionado isMobile às dependências
+  }, [sidebarVisible, isMobile])
 
   const menuItems = [
     {
@@ -43,6 +43,13 @@ export function Menu({ sidebarVisible, setSidebarVisible, isMobile }: MenuProps)
       title: "Proteção Social Básica",
       icon: <Shield className="h-5 w-5" />,
       subItems: [
+        // NOVO ITEM ADICIONADO AQUI PARA PSB
+        {
+          id: "psb-inicial", // ID único
+          title: "Página Inicial",
+          action: () => handleMenuItemClick(() => router.push("/psb")), // Redireciona para /psb
+          isExternal: false,
+        },
         {
           id: "emergencia",
           title: "Emergência Socioassistencial",
@@ -75,8 +82,15 @@ export function Menu({ sidebarVisible, setSidebarVisible, isMobile }: MenuProps)
     {
       id: "protecao-especial",
       title: "Proteção Social Especial",
-      icon: <Shield className="h-5 w-5" />,
+      icon: <Shield className="h-5 w-5" />, // Pode ser outro ícone se desejar diferenciar
       subItems: [
+        // NOVO ITEM ADICIONADO AQUI PARA PSE
+        {
+          id: "pse-inicial", // ID único
+          title: "Página Inicial",
+          action: () => handleMenuItemClick(() => router.push("/pse")), // Redireciona para /pse
+          isExternal: false,
+        },
         {
           id: "abordagem",
           title: "Abordagem Social",
@@ -108,11 +122,10 @@ export function Menu({ sidebarVisible, setSidebarVisible, isMobile }: MenuProps)
       title: "Cadastro Único",
       icon: <Users className="h-5 w-5" />,
       subItems: [
-        // NOVO ITEM ADICIONADO AQUI
         {
-          id: "cad-inicial", // ID único para o novo item
+          id: "cad-inicial",
           title: "Página Inicial",
-          action: () => handleMenuItemClick(() => router.push("/cad")), // Redireciona para /cad
+          action: () => handleMenuItemClick(() => router.push("/cad")),
           isExternal: false,
         },
         {
@@ -190,15 +203,15 @@ export function Menu({ sidebarVisible, setSidebarVisible, isMobile }: MenuProps)
     <aside
       className={
         isMobile
-          ? "fixed left-0 right-0 top-16 bottom-0 w-full h-auto z-50 bg-surface-alt border-b border-border overflow-y-auto" // Adicionado overflow-y-auto para mobile se o conteúdo for maior
+          ? "fixed left-0 right-0 top-16 bottom-0 w-full h-auto z-50 bg-surface-alt border-b border-border overflow-y-auto"
           : "relative w-64 min-h-screen bg-surface-alt border-r border-border"
       }
-      style={isMobile ? { maxHeight: "calc(100vh - 64px)" } : {}} // 64px é a altura típica do header
+      style={isMobile ? { maxHeight: "calc(100vh - 64px)" } : {}}
     >
       <nav className="p-4">
         <div className="mb-6">
           <button
-            onClick={() => handleMenuItemClick(() => router.push("/homepage"))} // Assumindo que /homepage é sua rota inicial
+            onClick={() => handleMenuItemClick(() => router.push("/homepage"))} // Ou router.push("/") se for a raiz
             className="flex items-center gap-2 text-primary p-3 rounded-md hover:bg-hover active:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary w-full text-left text-base transition-colors"
           >
             <Home className="h-5 w-5" />
@@ -218,7 +231,7 @@ export function Menu({ sidebarVisible, setSidebarVisible, isMobile }: MenuProps)
                     <span>{item.title}</span>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="pb-0 pt-1 bg-surface accordion-content"> {/* Se 'bg-surface' não for ideal para o conteúdo do accordion, ajuste conforme necessário */}
+                <AccordionContent className="pb-0 pt-1 bg-surface accordion-content">
                   <div className="space-y-1">
                     {item.subItems.map((subItem) => (
                       <MenuItem

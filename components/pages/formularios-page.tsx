@@ -40,7 +40,7 @@ export function FormulariosPage() {
           className="bg-surface rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
           onClick={() => openExternalLink(urls.profissionais)}
         >
-          <div className="bg-surface-alt p-6 rounded-md mb-6 flex items-center justify-center border border-border">
+          <div className="bg-surface-alt p-6 rounded-md mb-2 flex items-center justify-center border border-border">
             <ClipboardList className="h-24 w-24 text-secondary" />
           </div>
           <h3 className="text-primary font-medium text-xl">Profissionais</h3>
@@ -50,7 +50,7 @@ export function FormulariosPage() {
           className="bg-surface rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
           onClick={() => openExternalLink(urls.cadastroUnico)}
         >
-          <div className="bg-surface-alt p-6 rounded-md mb-6 flex items-center justify-center border border-border">
+          <div className="bg-surface-alt p-6 rounded-md mb-2 flex items-center justify-center border border-border">
             <ClipboardList className="h-24 w-24 text-secondary" />
           </div>
           <h3 className="text-primary font-medium text-xl">Cadastro Único</h3>
@@ -60,7 +60,7 @@ export function FormulariosPage() {
           className="bg-surface rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
           onClick={() => openExternalLink(urls.acoes)}
         >
-          <div className="bg-surface-alt p-6 rounded-md mb-6 flex items-center justify-center border border-border">
+          <div className="bg-surface-alt p-6 rounded-md mb-2 flex items-center justify-center border border-border">
             <ClipboardList className="h-24 w-24 text-secondary" />
           </div>
           <h3 className="text-primary font-medium text-xl">Ações</h3>
@@ -70,7 +70,7 @@ export function FormulariosPage() {
           className="bg-surface rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
           onClick={() => openExternalLink(urls.entrevistas)}
         >
-          <div className="bg-surface-alt p-6 rounded-md mb-6 flex items-center justify-center border border-border">
+          <div className="bg-surface-alt p-6 rounded-md mb-2 flex items-center justify-center border border-border">
             <ClipboardList className="h-24 w-24 text-secondary" />
           </div>
           <h3 className="text-primary font-medium text-xl">Entrevistas em Domicílio</h3>
