@@ -17,7 +17,7 @@ export function Menu({ sidebarVisible, setSidebarVisible, isMobile }: MenuProps)
 
   // Fecha sidebar ao clicar em um item no mobile
   const handleMenuItemClick = (action: () => void) => {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 768) { // Considerando 768px como breakpoint para mobile
       action()
       setSidebarVisible(false)
     } else {
@@ -27,7 +27,7 @@ export function Menu({ sidebarVisible, setSidebarVisible, isMobile }: MenuProps)
 
   // Add body overflow hidden when sidebar is open on mobile
   useEffect(() => {
-    if (window.innerWidth < 768 && sidebarVisible) {
+    if (isMobile && sidebarVisible) { // Verificando isMobile também aqui para mais precisão
       document.body.style.overflow = "hidden"
     } else {
       document.body.style.overflow = "auto"
@@ -35,7 +35,7 @@ export function Menu({ sidebarVisible, setSidebarVisible, isMobile }: MenuProps)
     return () => {
       document.body.style.overflow = "auto"
     }
-  }, [sidebarVisible])
+  }, [sidebarVisible, isMobile]) // Adicionado isMobile às dependências
 
   const menuItems = [
     {
@@ -108,6 +108,13 @@ export function Menu({ sidebarVisible, setSidebarVisible, isMobile }: MenuProps)
       title: "Cadastro Único",
       icon: <Users className="h-5 w-5" />,
       subItems: [
+        // NOVO ITEM ADICIONADO AQUI
+        {
+          id: "cad-inicial", // ID único para o novo item
+          title: "Página Inicial",
+          action: () => handleMenuItemClick(() => router.push("/cad")), // Redireciona para /cad
+          isExternal: false,
+        },
         {
           id: "paineis",
           title: "Painéis de Monitoramento",
@@ -183,15 +190,15 @@ export function Menu({ sidebarVisible, setSidebarVisible, isMobile }: MenuProps)
     <aside
       className={
         isMobile
-          ? "fixed left-0 right-0 top-16 bottom-0 w-full h-auto z-50 bg-surface-alt border-b border-border"
+          ? "fixed left-0 right-0 top-16 bottom-0 w-full h-auto z-50 bg-surface-alt border-b border-border overflow-y-auto" // Adicionado overflow-y-auto para mobile se o conteúdo for maior
           : "relative w-64 min-h-screen bg-surface-alt border-r border-border"
       }
-      style={isMobile ? { maxHeight: "calc(100vh - 64px)" } : {}}
+      style={isMobile ? { maxHeight: "calc(100vh - 64px)" } : {}} // 64px é a altura típica do header
     >
       <nav className="p-4">
         <div className="mb-6">
           <button
-            onClick={() => handleMenuItemClick(() => router.push("/homepage"))}
+            onClick={() => handleMenuItemClick(() => router.push("/homepage"))} // Assumindo que /homepage é sua rota inicial
             className="flex items-center gap-2 text-primary p-3 rounded-md hover:bg-hover active:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary w-full text-left text-base transition-colors"
           >
             <Home className="h-5 w-5" />
@@ -211,7 +218,7 @@ export function Menu({ sidebarVisible, setSidebarVisible, isMobile }: MenuProps)
                     <span>{item.title}</span>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="pb-0 pt-1 bg-surface accordion-content">
+                <AccordionContent className="pb-0 pt-1 bg-surface accordion-content"> {/* Se 'bg-surface' não for ideal para o conteúdo do accordion, ajuste conforme necessário */}
                   <div className="space-y-1">
                     {item.subItems.map((subItem) => (
                       <MenuItem

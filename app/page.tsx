@@ -1,19 +1,20 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu } from "@/components/menu"
+import { Menu } from "@/components/menu" // Supondo que este componente exista e esteja correto
 import { Header } from "@/components/header"
-import { CategoryCard } from "@/components/category-card"
+import { CategoryCard } from "@/components/category-card" // Supondo que este componente exista e esteja correto
 import Link from "next/link"
 
 export default function HomePage() {
   const [sidebarVisible, setSidebarVisible] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [currentPage, setCurrentPage] = useState<string | null>(null) // Novo estado
 
   // Check if device is mobile
   useEffect(() => {
     const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768)
+      setIsMobile(window.innerWidth < 768) // md breakpoint
     }
     checkIfMobile()
     window.addEventListener("resize", checkIfMobile)
@@ -39,7 +40,7 @@ export default function HomePage() {
         {
           id: 1,
           title: "Emergência Socioassistencial",
-          icon: "emergency",
+          icon: "emergency", // Certifique-se de que seu componente CategoryCard ou ButtonComponent lida com esses ícones
           href: "/psb/emergencia",
           internal: true,
         },
@@ -158,11 +159,12 @@ export default function HomePage() {
       <Header
         sidebarVisible={sidebarVisible}
         setSidebarVisible={setSidebarVisible}
+        setCurrentPage={setCurrentPage} // Prop setCurrentPage adicionada aqui
       />
       <Overlay />
       <div className="flex relative">
         {sidebarVisible && (
-          <Menu
+          <Menu // Supondo que o componente Menu esteja configurado corretamente
             sidebarVisible={sidebarVisible}
             setSidebarVisible={setSidebarVisible}
             isMobile={isMobile}
@@ -171,31 +173,38 @@ export default function HomePage() {
         <main
           className={`flex-1 p-4 md:p-8 transition-all duration-300 ${sidebarVisible && isMobile ? "hidden" : ""}`}
         >
-          <div className="bg-surface rounded-md p-4 md:p-8 mb-8 text-primary text-center border border-muted shadow-sm">
-            <h1 className="text-xl md:text-2xl font-semibold">SEJA BEM-VINDO(A)</h1>
-            <p className="text-sm md:text-base">ao Sistema Integrado da Secretaria Municipal de Assistência Social</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full">
-            {categories.map((category) => (
-              <CategoryCard
-                key={category.id}
-                title={category.title}
-                description={category.description}
-                buttons={category.buttons}
-                ButtonComponent={({ button }) =>
-                  button.internal ? (
-                    <Link href={button.href} className="btn">
-                      {button.title}
-                    </Link>
-                  ) : (
-                    <a href={button.href} target="_blank" rel="noopener noreferrer" className="btn">
-                      {button.title}
-                    </a>
-                  )
-                }
-              />
-            ))}
-          </div>
+          {/* O conteúdo da página será renderizado aqui ou com base em 'currentPage' */}
+          {currentPage === null ? ( // Exemplo de como usar currentPage para renderizar condicionalmente
+            <>
+              <div className="bg-surface rounded-md p-4 md:p-8 mb-8 text-primary text-center border border-muted shadow-sm">
+                <h1 className="text-xl md:text-2xl font-semibold">SEJA BEM-VINDO(A)</h1>
+                <p className="text-sm md:text-base">ao Sistema Integrado da Secretaria Municipal de Assistência Social</p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full">
+                {categories.map((category) => (
+                  <CategoryCard
+                    key={category.id}
+                    title={category.title}
+                    description={category.description}
+                    buttons={category.buttons}
+                    ButtonComponent={({ button }: { button: { href: string; internal?: boolean; external?: boolean; title: string } }) => // Definindo o tipo de 'button' explicitamente
+                      button.internal ? (
+                        <Link href={button.href} className="btn"> {/* Certifique-se que a classe 'btn' está definida */}
+                          {button.title}
+                        </Link>
+                      ) : (
+                        <a href={button.href} target="_blank" rel="noopener noreferrer" className="btn"> {/* Certifique-se que a classe 'btn' está definida */}
+                          {button.title}
+                        </a>
+                      )
+                    }
+                  />
+                ))}
+              </div>
+            </>
+          ) : (
+            <div>Conteúdo para a página: {currentPage}</div>
+          )}
         </main>
       </div>
     </div>

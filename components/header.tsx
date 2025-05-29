@@ -57,6 +57,7 @@ export function Header({ sidebarVisible, setSidebarVisible, setCurrentPage }: He
       </div>
 
       {/* Accordion centralizado */}
+      {/* A div abaixo já está configurada para ocultar em mobile (hidden) e exibir em telas médias ou maiores (md:block) */}
       <div className="relative hidden md:block flex-1 flex justify-center">
         <button
           ref={buttonRef}
