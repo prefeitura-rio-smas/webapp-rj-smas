@@ -12,7 +12,6 @@ export function YearSelector({ currentYear, onYearChange }: YearSelectorProps) {
   const [isOpen, setIsOpen] = useState(false)
   const years = ["2025", "2024"]
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = () => {
       setIsOpen(false)

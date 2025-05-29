@@ -12,7 +12,6 @@ export function AgeGroupSelector({ currentGroup, onGroupChange }: AgeGroupSelect
   const [isOpen, setIsOpen] = useState(false)
   const groups = ["Adultos", "Crianças e Adolescentes"]
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = () => {
       setIsOpen(false)

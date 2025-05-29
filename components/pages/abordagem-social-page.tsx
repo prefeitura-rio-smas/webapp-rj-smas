@@ -8,12 +8,10 @@ import { YearSelector } from "@/components/year-selector"
 export function AbordagemSocialPage() {
   const [selectedYear, setSelectedYear] = useState("2025")
 
-  // Function to handle external links
   const openExternalLink = (url: string) => {
     window.open(url, "_blank")
   }
 
-  // Define URLs based on selected year
   const getUrls = () => {
     if (selectedYear === "2024") {
       return {
