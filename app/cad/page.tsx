@@ -48,7 +48,6 @@ const iconComponents: { [key: string]: React.ElementType } = {
 };
 
 export default function CadPage() {
-    // Defina as classes base do card sem a propriedade de justificação que varia
     const baseCardClasses = "bg-surface rounded-md p-8 pb-4 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm group outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary";
 
     return (
@@ -78,26 +77,23 @@ export default function CadPage() {
                             <Link
                                 key={button.id}
                                 href={button.href}
-                                // Aplicar justify-start para links internos
                                 className={`${baseCardClasses} justify-start`}
                             >
                                 <div className="bg-surface-alt p-6 rounded-md flex items-center justify-center border border-border">
                                     <IconComponent className="h-24 w-24 text-secondary" />
                                 </div>
-                                {/* Adicionar uma margem superior ao container do título para espaçamento */}
-                                <div className="flex flex-col items-center justify-center px-2 mt-6"> {/* Aumentado para mt-6 como exemplo */}
+                                <div className="flex flex-col items-center justify-center px-2 mt-6">
                                     <h3 className="text-primary font-medium text-xl text-center leading-tight">{button.title}</h3>
                                 </div>
                             </Link>
                         );
-                    } else { // external link
+                    } else {
                         return (
                             <a
                                 key={button.id}
                                 href={button.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                // Manter justify-between para links externos
                                 className={`${baseCardClasses} justify-between`}
                             >
                                 <div className="bg-surface-alt p-6 rounded-md flex items-center justify-center border border-border">

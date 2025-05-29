@@ -1,27 +1,25 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu } from "@/components/menu" // Supondo que este componente exista e esteja correto
+import { Menu } from "@/components/menu"
 import { Header } from "@/components/header"
-import { CategoryCard } from "@/components/category-card" // Supondo que este componente exista e esteja correto
+import { CategoryCard } from "@/components/category-card"
 import Link from "next/link"
 
 export default function HomePage() {
   const [sidebarVisible, setSidebarVisible] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
-  const [currentPage, setCurrentPage] = useState<string | null>(null) // Novo estado
+  const [currentPage, setCurrentPage] = useState<string | null>(null)
 
-  // Check if device is mobile
   useEffect(() => {
     const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768) // md breakpoint
+      setIsMobile(window.innerWidth < 768)
     }
     checkIfMobile()
     window.addEventListener("resize", checkIfMobile)
     return () => window.removeEventListener("resize", checkIfMobile)
   }, [])
 
-  // Create overlay for mobile when sidebar is open
   const Overlay = () => {
     if (isMobile && sidebarVisible) {
       return <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setSidebarVisible(false)} />
@@ -29,7 +27,6 @@ export default function HomePage() {
     return null
   }
 
-  // Atualize os botões internos para usar href
   const categories = [
     {
       id: 1,
@@ -40,7 +37,7 @@ export default function HomePage() {
         {
           id: 1,
           title: "Emergência Socioassistencial",
-          icon: "emergency", // Certifique-se de que seu componente CategoryCard ou ButtonComponent lida com esses ícones
+          icon: "emergency",
           href: "/psb/emergencia",
           internal: true,
         },
@@ -153,18 +150,17 @@ export default function HomePage() {
     },
   ]
 
-  // Renderiza os cards de categoria com navegação por Link
   return (
     <div className="min-h-screen bg-background">
       <Header
         sidebarVisible={sidebarVisible}
         setSidebarVisible={setSidebarVisible}
-        setCurrentPage={setCurrentPage} // Prop setCurrentPage adicionada aqui
+        setCurrentPage={setCurrentPage} 
       />
       <Overlay />
       <div className="flex relative">
         {sidebarVisible && (
-          <Menu // Supondo que o componente Menu esteja configurado corretamente
+          <Menu 
             sidebarVisible={sidebarVisible}
             setSidebarVisible={setSidebarVisible}
             isMobile={isMobile}
@@ -173,8 +169,7 @@ export default function HomePage() {
         <main
           className={`flex-1 p-4 md:p-8 transition-all duration-300 ${sidebarVisible && isMobile ? "hidden" : ""}`}
         >
-          {/* O conteúdo da página será renderizado aqui ou com base em 'currentPage' */}
-          {currentPage === null ? ( // Exemplo de como usar currentPage para renderizar condicionalmente
+          {currentPage === null ? ( 
             <>
               <div className="bg-surface rounded-md p-4 md:p-8 mb-8 text-primary text-center border border-muted shadow-sm">
                 <h1 className="text-xl md:text-2xl font-semibold">SEJA BEM-VINDO(A)</h1>
@@ -187,13 +182,13 @@ export default function HomePage() {
                     title={category.title}
                     description={category.description}
                     buttons={category.buttons}
-                    ButtonComponent={({ button }: { button: { href: string; internal?: boolean; external?: boolean; title: string } }) => // Definindo o tipo de 'button' explicitamente
+                    ButtonComponent={({ button }: { button: { href: string; internal?: boolean; external?: boolean; title: string } }) =>
                       button.internal ? (
-                        <Link href={button.href} className="btn"> {/* Certifique-se que a classe 'btn' está definida */}
+                        <Link href={button.href} className="btn">
                           {button.title}
                         </Link>
                       ) : (
-                        <a href={button.href} target="_blank" rel="noopener noreferrer" className="btn"> {/* Certifique-se que a classe 'btn' está definida */}
+                        <a href={button.href} target="_blank" rel="noopener noreferrer" className="btn">
                           {button.title}
                         </a>
                       )

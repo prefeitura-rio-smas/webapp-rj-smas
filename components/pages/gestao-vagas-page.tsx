@@ -89,7 +89,6 @@ export function GestaoVagasPage() {
             className="flex items-center gap-2 text-primary text-lg group p-0 h-auto"
             style={{ WebkitTapHighlightColor: "transparent" }}
           >
-            {/* Você pode usar um ícone de voltar se quiser */}
             <span className="group-hover:underline transition">Página inicial</span>
           </Link>
           <span>/</span>
@@ -106,7 +105,6 @@ export function GestaoVagasPage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Gestão 2025 Card */}
         <div
           ref={cardRefs.gestao}
           className="bg-surface rounded-md p-8 flex flex-col h-48 relative overflow-hidden border border-border shadow-sm"
@@ -128,7 +126,6 @@ export function GestaoVagasPage() {
               </p>
             </div>
           </div>
-          {/* Hover overlay */}
           <div
             className={`absolute inset-0 bg-surface flex flex-col items-center justify-center gap-4 p-4 transition-opacity duration-300 ${
               hoveredCard === "gestao" ? "opacity-100" : "opacity-0 pointer-events-none"
@@ -151,7 +148,6 @@ export function GestaoVagasPage() {
           </div>
         </div>
 
-        {/* Abordagem Social Card */}
         <div
           ref={cardRefs.abordagem}
           className="bg-surface rounded-md p-8 flex flex-col h-48 relative overflow-hidden border border-border shadow-sm"
@@ -171,7 +167,6 @@ export function GestaoVagasPage() {
               <p className="text-foreground text-base">Painel de Vagas - {selectedAgeGroup}</p>
             </div>
           </div>
-          {/* Hover overlay */}
           <div
             className={`absolute inset-0 bg-surface flex flex-col items-center justify-center gap-4 p-4 transition-opacity duration-300 ${
               hoveredCard === "abordagem" ? "opacity-100" : "opacity-0 pointer-events-none"
@@ -194,7 +189,6 @@ export function GestaoVagasPage() {
           </div>
         </div>
 
-        {/* Unidades de Acolhimento Card */}
         <div
           ref={cardRefs.unidades}
           className="bg-surface rounded-md p-8 flex flex-col h-48 relative overflow-hidden border border-border shadow-sm"
@@ -214,7 +208,6 @@ export function GestaoVagasPage() {
               <p className="text-foreground text-base">Monitoramento - {selectedAgeGroup}</p>
             </div>
           </div>
-          {/* Hover overlay */}
           <div
             className={`absolute inset-0 bg-surface flex flex-col items-center justify-center gap-4 p-4 transition-opacity duration-300 ${
               hoveredCard === "unidades" ? "opacity-100" : "opacity-0 pointer-events-none"
@@ -238,7 +231,6 @@ export function GestaoVagasPage() {
         </div>
       </div>
 
-      {/* Ferramentas / Documentação */}
       <div className="flex items-center justify-center">
         <div className="h-px bg-border flex-grow" />
         <h2 className="text-2xl font-bold text-primary text-center mx-6">
@@ -248,9 +240,8 @@ export function GestaoVagasPage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Download da Base de Dados */}
         <div
-          className="bg-surface rounded-md p-8 flex flex-1 items-center gap-6 h-48 cursor-pointer border border-border shadow-sm"
+          className="bg-surface rounded-md p-8 flex flex-1 items-center gap-6 h-48 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
           onClick={() => openExternalLink(urls.downloadBase)}
         >
           <div className="bg-surface-alt p-6 rounded-md flex items-center justify-center border border-border h-24 w-24 min-w-[6rem] min-h-[6rem]">
@@ -261,9 +252,8 @@ export function GestaoVagasPage() {
           </div>
         </div>
 
-        {/* Instruções de Uso */}
         <div
-          className="bg-surface rounded-md p-8 flex flex-1 items-center gap-6 h-48 cursor-pointer border border-border shadow-sm"
+          className="bg-surface rounded-md p-8 flex flex-1 items-center gap-6 h-48 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
           onClick={() => openExternalLink(urls.instrucoes)}
         >
           <div className="bg-surface-alt p-6 rounded-md flex items-center justify-center border border-border h-24 w-24 min-w-[6rem] min-h-[6rem]">
@@ -274,9 +264,8 @@ export function GestaoVagasPage() {
           </div>
         </div>
 
-        {/* Instalação do Aplicativo Survey 123 */}
         <div
-          className="bg-surface rounded-md p-8 flex flex-1 items-center gap-6 h-48 cursor-pointer border border-border shadow-sm"
+          className="bg-surface rounded-md p-8 flex flex-1 items-center gap-6 h-48 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
           onClick={() => openExternalLink(urls.instalacao)}
         >
           <div className="bg-surface-alt p-6 rounded-md flex items-center justify-center border border-border h-24 w-24 min-w-[6rem] min-h-[6rem]">

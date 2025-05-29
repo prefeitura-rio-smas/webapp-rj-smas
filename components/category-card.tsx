@@ -118,7 +118,6 @@ export function CategoryCard({ title, description, buttons }: CategoryCardProps)
         </div>
       </div>
 
-      {/* Submenu que aparece no hover */}
       <div
         className={`absolute inset-0 bg-surface transition-opacity duration-300 flex items-center justify-center ${
           isHovered ? "opacity-100" : "opacity-0 pointer-events-none"

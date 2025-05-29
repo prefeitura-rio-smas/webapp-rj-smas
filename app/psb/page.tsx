@@ -99,16 +99,12 @@ export default function PSBPage() {
                             <div className={`${baseIconContainerClasses}`}>
                                 <IconComponent className="h-24 w-24 text-secondary" />
                             </div>
-                            {/* Alterações no container do título para links internos:
-                              - Adicionado h-10 (altura para ~2 linhas de text-xl leading-tight)
-                              - Alterado justify-center para justify-start para alinhar o texto ao topo do container
-                            */}
                             <div className="flex flex-col items-center justify-start px-2 mt-2 h-10">
                                 <h3 className="text-primary font-medium text-xl text-center leading-tight">{button.title}</h3>
                             </div>
                         </Link>
                     );
-                } else { // external link
+                } else {
                     return (
                         <a
                             key={button.id}

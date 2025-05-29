@@ -15,9 +15,8 @@ interface MenuProps {
 export function Menu({ sidebarVisible, setSidebarVisible, isMobile }: MenuProps) {
   const router = useRouter()
 
-  // Fecha sidebar ao clicar em um item no mobile
   const handleMenuItemClick = (action: () => void) => {
-    if (window.innerWidth < 768) { // Considerando 768px como breakpoint para mobile
+    if (window.innerWidth < 768) {
       action()
       setSidebarVisible(false)
     } else {
@@ -25,7 +24,6 @@ export function Menu({ sidebarVisible, setSidebarVisible, isMobile }: MenuProps)
     }
   }
 
-  // Add body overflow hidden when sidebar is open on mobile
   useEffect(() => {
     if (isMobile && sidebarVisible) {
       document.body.style.overflow = "hidden"
@@ -43,11 +41,10 @@ export function Menu({ sidebarVisible, setSidebarVisible, isMobile }: MenuProps)
       title: "Proteção Social Básica",
       icon: <Shield className="h-5 w-5" />,
       subItems: [
-        // NOVO ITEM ADICIONADO AQUI PARA PSB
         {
-          id: "psb-inicial", // ID único
+          id: "psb-inicial",
           title: "Página Inicial",
-          action: () => handleMenuItemClick(() => router.push("/psb")), // Redireciona para /psb
+          action: () => handleMenuItemClick(() => router.push("/psb")),
           isExternal: false,
         },
         {
@@ -82,13 +79,12 @@ export function Menu({ sidebarVisible, setSidebarVisible, isMobile }: MenuProps)
     {
       id: "protecao-especial",
       title: "Proteção Social Especial",
-      icon: <Shield className="h-5 w-5" />, // Pode ser outro ícone se desejar diferenciar
+      icon: <Shield className="h-5 w-5" />,
       subItems: [
-        // NOVO ITEM ADICIONADO AQUI PARA PSE
         {
-          id: "pse-inicial", // ID único
+          id: "pse-inicial",
           title: "Página Inicial",
-          action: () => handleMenuItemClick(() => router.push("/pse")), // Redireciona para /pse
+          action: () => handleMenuItemClick(() => router.push("/pse")),
           isExternal: false,
         },
         {
@@ -211,7 +207,7 @@ export function Menu({ sidebarVisible, setSidebarVisible, isMobile }: MenuProps)
       <nav className="p-4">
         <div className="mb-6">
           <button
-            onClick={() => handleMenuItemClick(() => router.push("/homepage"))} // Ou router.push("/") se for a raiz
+            onClick={() => handleMenuItemClick(() => router.push("/homepage"))}
             className="flex items-center gap-2 text-primary p-3 rounded-md hover:bg-hover active:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary w-full text-left text-base transition-colors"
           >
             <Home className="h-5 w-5" />

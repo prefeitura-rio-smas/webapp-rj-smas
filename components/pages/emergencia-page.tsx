@@ -53,7 +53,7 @@ export function EmergenciaPage() {
           className="bg-surface rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
           onClick={() => openExternalLink("")}
         >
-          <div className="bg-surface-alt p-6 rounded-md mb-6 flex items-center justify-center border border-border">
+          <div className="bg-surface-alt p-6 rounded-md mb-2 flex items-center justify-center border border-border">
             <ClipboardCheck className="h-24 w-24 text-secondary" />
           </div>
           <h3 className="text-primary font-medium text-xl">Ficha de Atendimento Emergência Socioassistencial</h3>
@@ -71,7 +71,7 @@ export function EmergenciaPage() {
       </div>
 
       <div
-        className="bg-surface rounded-md p-8 flex items-start gap-6 md:w-1/3 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
+        className="bg-surface rounded-md p-8 flex items-center gap-6 md:w-1/3 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
         onClick={() => openExternalLink("")}
       >
         <div className="bg-surface-alt p-6 rounded-md flex items-center justify-center border border-border">

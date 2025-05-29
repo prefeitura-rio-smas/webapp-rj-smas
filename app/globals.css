@@ -21,8 +21,6 @@ html, body {
    VARIÁVEIS DE COR (ROOT)
    ========================= */
 :root {
-
-  /* Paleta centralizada */
   --color-primary: #193257;
   --color-secondary: #00c2f7;
   --color-background: #f6f9fc;
@@ -38,9 +36,6 @@ html, body {
    VARIÁVEIS DE COR (DARK)
    ========================= */
 .dark {
-
-
-  /* Paleta centralizada */
   --color-primary: #ffffff;
   --color-secondary: #00c2f7;
   --color-background: #10244a;
@@ -84,7 +79,6 @@ html, body {
    ESTILOS DE COMPONENTES E TEMAS
    ========================= */
 
-/* Light theme */
 .light body {
   background-color: #f8fafc;
   color: #0d2953 !important;
@@ -181,8 +175,6 @@ html, body {
 .light .text-gray-300 {
   color: #46618b !important;
 }
-
-/* Dark theme */
 
 .dark .rounded-full,
 .dark .rounded-md {

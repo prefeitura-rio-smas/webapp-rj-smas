@@ -81,7 +81,7 @@ export default function PSEPage() {
             </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {actionButtons.map((button) => {
                 const IconComponent = iconComponents[button.iconName] || iconComponents.default;
                 
@@ -90,28 +90,25 @@ export default function PSEPage() {
                         <Link
                             key={button.id}
                             href={button.href}
-                            className={`${baseCardClasses}`} // Aplicando classes base
+                            className={`${baseCardClasses}`}
                         >
-                            {/* Container do ícone SEM mb-auto para links internos */}
                             <div className={`${baseIconContainerClasses}`}>
                                 <IconComponent className="h-24 w-24 text-secondary" />
                             </div>
-                            {/* Container do título COM mt-6 para espaçamento */}
                             <div className="flex flex-col items-center justify-center px-2 mt-2">
                                 <h3 className="text-primary font-medium text-xl text-center leading-tight">{button.title}</h3>
                             </div>
                         </Link>
                     );
-                } else { // external link
+                } else {
                     return (
                         <a
                             key={button.id}
                             href={button.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`${baseCardClasses}`} // Aplicando classes base
+                            className={`${baseCardClasses}`}
                         >
-                            {/* Container do ícone COM mb-auto para links externos */}
                             <div className={`${baseIconContainerClasses} mb-auto`}>
                                 <IconComponent className="h-24 w-24 text-secondary" />
                             </div>

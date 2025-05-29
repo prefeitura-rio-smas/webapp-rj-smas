@@ -92,7 +92,7 @@ export function CartaoProtegePage() {
             className="bg-surface rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
             onClick={() => openExternalLink(tool.url)}
           >
-            <div className="bg-surface-alt p-6 rounded-md mb-6 flex items-center justify-center border border-border">
+            <div className="bg-surface-alt p-6 rounded-md mb-2 flex items-center justify-center border border-border">
               {tool.icon}
             </div>
             <h3 className="text-primary font-medium text-xl">{tool.title}</h3>
@@ -113,7 +113,7 @@ export function CartaoProtegePage() {
             className="bg-surface rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
             onClick={() => openExternalLink(doc.url)}
           >
-            <div className="bg-surface-alt p-6 rounded-md mb-6 flex items-center justify-center border border-border">
+            <div className="bg-surface-alt p-6 rounded-md mb-4 flex items-center justify-center border border-border">
               {doc.icon}
             </div>
             <div>
