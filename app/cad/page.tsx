@@ -1,15 +1,13 @@
 "use client"
 
 import Link from "next/link"
-import { 
-    ArrowLeft, 
-
+import {
+    ArrowLeft,
     LayoutDashboard,
     Edit3,
     FileText,
     Download
 } from "lucide-react"
-import { useRouter } from "next/navigation";
 
 const actionButtons = [
     {
@@ -50,21 +48,8 @@ const iconComponents: { [key: string]: React.ElementType } = {
 };
 
 export default function CadPage() {
-    const router = useRouter();
-
-    const openExternalLink = (url: string) => {
-        window.open(url, "_blank", "noopener,noreferrer");
-    }
-
-    const handleButtonClick = (button: typeof actionButtons[0]) => {
-        if (button.external && button.href) {
-            openExternalLink(button.href);
-        } else if (button.internal && button.href) {
-            router.push(button.href);
-        } else if (button.href) {
-            router.push(button.href); 
-        }
-    };
+    // Defina as classes base do card sem a propriedade de justificação que varia
+    const baseCardClasses = "bg-surface rounded-md p-8 pb-4 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm group outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary";
 
     return (
         <div className="space-y-8">
@@ -84,24 +69,47 @@ export default function CadPage() {
                 </h1>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"> {}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {actionButtons.map((button) => {
                     const IconComponent = iconComponents[button.iconName] || iconComponents.default;
-                    return (
-                        <div
-                            key={button.id}
-                            className="bg-surface rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
-                            onClick={() => handleButtonClick(button)}
-                            role="button"
-                            tabIndex={0} 
-                            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleButtonClick(button);}}
-                        >
-                            <div className="bg-surface-alt p-6 rounded-md mb-2 flex items-center justify-center border border-border">
-                                <IconComponent className="h-24 w-24 text-secondary" />
-                            </div>
-                            <h3 className="text-primary font-medium text-xl">{button.title}</h3>
-                        </div>
-                    );
+                    
+                    if (button.internal) {
+                        return (
+                            <Link
+                                key={button.id}
+                                href={button.href}
+                                // Aplicar justify-start para links internos
+                                className={`${baseCardClasses} justify-start`}
+                            >
+                                <div className="bg-surface-alt p-6 rounded-md flex items-center justify-center border border-border">
+                                    <IconComponent className="h-24 w-24 text-secondary" />
+                                </div>
+                                {/* Adicionar uma margem superior ao container do título para espaçamento */}
+                                <div className="flex flex-col items-center justify-center px-2 mt-6"> {/* Aumentado para mt-6 como exemplo */}
+                                    <h3 className="text-primary font-medium text-xl text-center leading-tight">{button.title}</h3>
+                                </div>
+                            </Link>
+                        );
+                    } else { // external link
+                        return (
+                            <a
+                                key={button.id}
+                                href={button.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                // Manter justify-between para links externos
+                                className={`${baseCardClasses} justify-between`}
+                            >
+                                <div className="bg-surface-alt p-6 rounded-md flex items-center justify-center border border-border">
+                                    <IconComponent className="h-24 w-24 text-secondary" />
+                                </div>
+                                <div className="flex flex-col items-center justify-center px-2">
+                                    <h3 className="text-primary font-medium text-xl text-center leading-tight">{button.title}</h3>
+                                    <span className="text-muted text-xs text-center mt-0.5 leading-none">(link externo)</span>
+                                </div>
+                            </a>
+                        );
+                    }
                 })}
             </div>
         </div>
