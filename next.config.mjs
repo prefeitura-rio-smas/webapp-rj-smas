@@ -15,6 +15,7 @@ const nextConfig = {
       'http://localhost:3000'
     ],
   },
-}
+  output: 'export',
+};
 
-export default nextConfig
+export default nextConfig;
