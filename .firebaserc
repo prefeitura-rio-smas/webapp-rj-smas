@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "rj-smas-6f32a"
-  }
+  },
+  "targets": {
+    "rj-smas-6f32a": {
+      "hosting": {
+        "rj-smas": [
+          "rj-smas"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
