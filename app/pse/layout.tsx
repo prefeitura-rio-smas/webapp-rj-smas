@@ -37,7 +37,6 @@ export default function PseLayout({ children }: { children: React.ReactNode }) {
           <Menu
             sidebarVisible={sidebarVisible}
             setSidebarVisible={setSidebarVisible}
-            setCurrentPage={setCurrentPage}
             isMobile={isMobile}
           />
         )}
