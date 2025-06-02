@@ -155,12 +155,12 @@ export default function HomePage() {
       <Header
         sidebarVisible={sidebarVisible}
         setSidebarVisible={setSidebarVisible}
-        setCurrentPage={setCurrentPage} 
+        setCurrentPage={setCurrentPage}
       />
       <Overlay />
       <div className="flex relative">
         {sidebarVisible && (
-          <Menu 
+          <Menu
             sidebarVisible={sidebarVisible}
             setSidebarVisible={setSidebarVisible}
             isMobile={isMobile}
@@ -169,11 +169,13 @@ export default function HomePage() {
         <main
           className={`flex-1 p-4 md:p-8 transition-all duration-300 ${sidebarVisible && isMobile ? "hidden" : ""}`}
         >
-          {currentPage === null ? ( 
+          {currentPage === null ? (
             <>
               <div className="bg-surface rounded-md p-4 md:p-8 mb-8 text-primary text-center border border-muted shadow-sm">
                 <h1 className="text-xl md:text-2xl font-semibold">SEJA BEM-VINDO(A)</h1>
-                <p className="text-sm md:text-base">ao Sistema Integrado da Secretaria Municipal de Assistência Social</p>
+                <p className="text-sm md:text-base">
+                  ao Sistema Integrado da Secretaria Municipal de Assistência Social
+                </p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full">
                 {categories.map((category) => (
@@ -182,17 +184,6 @@ export default function HomePage() {
                     title={category.title}
                     description={category.description}
                     buttons={category.buttons}
-                    ButtonComponent={({ button }: { button: { href: string; internal?: boolean; external?: boolean; title: string } }) =>
-                      button.internal ? (
-                        <Link href={button.href} className="btn">
-                          {button.title}
-                        </Link>
-                      ) : (
-                        <a href={button.href} target="_blank" rel="noopener noreferrer" className="btn">
-                          {button.title}
-                        </a>
-                      )
-                    }
                   />
                 ))}
               </div>
