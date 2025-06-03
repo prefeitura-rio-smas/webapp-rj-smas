@@ -36,7 +36,7 @@ export function EmergenciaPage() {
           <div className="bg-surface-alt p-6 rounded-md mb-6 flex items-center justify-center border border-border">
             <Monitor className="h-24 w-24 text-secondary" />
           </div>
-          <h3 className="text-primary font-medium text-xl">Painéis de Monitoramento</h3>
+          <h3 className="text-primary font-medium text-xl">Painéis de Monitoramento 2025</h3>
         </div>
 
         <div
@@ -54,9 +54,9 @@ export function EmergenciaPage() {
           onClick={() => openExternalLink("")}
         >
           <div className="bg-surface-alt p-6 rounded-md mb-2 flex items-center justify-center border border-border">
-            <ClipboardCheck className="h-24 w-24 text-secondary" />
+            <Edit className="h-24 w-24 text-secondary" />
           </div>
-          <h3 className="text-primary font-medium text-xl">Ficha de Atendimento Emergência Socioassistencial</h3>
+          <h3 className="text-primary font-medium text-xl">Edição de Dados</h3>
         </div>
 
         <div
@@ -71,14 +71,14 @@ export function EmergenciaPage() {
       </div>
 
       <div
-        className="bg-surface rounded-md p-8 flex items-center gap-6 md:w-1/3 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
+        className="bg-surface rounded-md p-8 flex flex-col items-center h-64 cursor-pointer transition-transform hover:scale-102 border border-border shadow-sm"
         onClick={() => openExternalLink("")}
       >
         <div className="bg-surface-alt p-6 rounded-md flex items-center justify-center border border-border">
-          <Edit className="h-24 w-24 text-secondary" />
+          <ClipboardCheck className="h-24 w-24 text-secondary" />
         </div>
         <div className="flex-1">
-          <h3 className="text-primary font-medium text-xl">Edição de Dados</h3>
+          <h3 className="text-primary font-medium text-xl">Painéis de Monitoramento - Dados Históricos</h3>
         </div>
       </div>
     </div>
