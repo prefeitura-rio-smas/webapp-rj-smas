@@ -56,10 +56,10 @@ export function AbordagemSocialPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
         <div
-          className="bg-surface rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-102 border border-border shadow-sm"
+          className="bg-surface rounded-md p-8 flex flex-col items-center text-center h-64 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
           onClick={() => openExternalLink("https://siurb.rio/portal/apps/experiencebuilder/experience/?id=8b5372c3bcc64cdb8658ed3f994b41cc&page=Preenchimento-ficha-de-abordagem")}
         >
-          <div className="bg-surface-alt p-6 rounded-md mb-6 flex items-center justify-center cursor-pointer transition-transform hover:scale-102 border border-border">
+          <div className="bg-surface-alt p-6 rounded-md mb-6 flex items-center justify-center border border-border">
             <ClipboardList className="h-24 w-24 text-sky-400" />
           </div>
           <h3 className="text-primary font-medium text-xl">

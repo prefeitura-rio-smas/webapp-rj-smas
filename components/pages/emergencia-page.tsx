@@ -71,10 +71,10 @@ export function EmergenciaPage() {
       </div>
 
       <div
-        className="bg-surface rounded-md p-8 flex flex-col items-center h-64 cursor-pointer transition-transform hover:scale-102 border border-border shadow-sm"
+        className="bg-surface rounded-md p-8 flex flex-col items-center h-64 cursor-pointer transition-transform hover:scale-105 border border-border shadow-sm"
         onClick={() => openExternalLink("")}
       >
-        <div className="bg-surface-alt p-6 rounded-md flex items-center justify-center border border-border">
+        <div className="bg-surface-alt p-6 rounded-md flex items-center justify-center border border-border mb-6">
           <ClipboardCheck className="h-24 w-24 text-secondary" />
         </div>
         <div className="flex-1">
