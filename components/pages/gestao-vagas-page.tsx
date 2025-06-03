@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, JSX } from "react"
 import { ClipboardList, Users2, Home, CloudDownload, BookOpen, Download, FileText, BarChart, ArrowLeft } from "lucide-react"
 import { AgeGroupSelector } from "@/components/age-group-selector"
 import Link from "next/link"
